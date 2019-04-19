@@ -14,8 +14,8 @@
 			</apex:selectList>
 			<br/>
 			<apex:commandButton value="Search" action="{!actionSearch}" />
-			<apex:commandButton value="Add"></apex:commandButton>
-			<apex:commandButton value="Delete" action="{!deleteAllStudents}"></apex:commandButton>
+			<apex:commandButton value="Add" action="{!doSubmit}" oncomplete="gotoAddNewStudentPage();"></apex:commandButton>
+			<apex:commandButton value="Delete"></apex:commandButton>
 		</apex:form>
 	</div>
 	<!-- showing the table-->
@@ -70,6 +70,11 @@
 	   		</apex:outputPanel>
    		</apex:form>	
 	</div>
+<script>
+function gotoAddNewStudentPage() {
+    window.location = '/apex/AddNewStudent';
+}
+</script>
 
 </apex:page>
 

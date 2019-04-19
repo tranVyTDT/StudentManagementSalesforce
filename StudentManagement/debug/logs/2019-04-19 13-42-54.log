@@ -1,0 +1,27 @@
+36.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+23:42:53.0 (363267)|USER_INFO|[EXTERNAL]|0050o00000WkyGG|ttvy@keizu.co.jp|Pacific Standard Time|GMT-07:00
+23:42:53.0 (403307)|EXECUTION_STARTED
+23:42:53.0 (409291)|CODE_UNIT_STARTED|[EXTERNAL]|0660o000008sbCc|VF: /apex/AddNewStudent
+23:42:53.0 (4507446)|VF_SERIALIZE_VIEWSTATE_BEGIN|0660o000008sbCc
+23:42:53.0 (8930583)|VF_SERIALIZE_VIEWSTATE_END
+23:42:53.0 (9215751)|CODE_UNIT_STARTED|[EXTERNAL]|Generate Metadata
+23:42:53.0 (9586373)|CODE_UNIT_FINISHED|Generate Metadata
+23:42:53.11 (11929613)|CUMULATIVE_LIMIT_USAGE
+23:42:53.11 (11929613)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:42:53.11 (11929613)|CUMULATIVE_LIMIT_USAGE_END
+
+23:42:53.0 (11972472)|CODE_UNIT_FINISHED|VF: /apex/AddNewStudent
+23:42:53.0 (12775277)|EXECUTION_FINISHED

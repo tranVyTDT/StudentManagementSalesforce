@@ -6,7 +6,7 @@
         "createdById": "0050o00000WkyGGAAZ",
         "namespacePrefix": null,
         "lastModifiedById": "0050o00000WkyGGAAZ",
-        "lastModifiedDate": "2019-04-12T10:21:13.000+0000",
+        "lastModifiedDate": "2019-04-19T08:24:43.000+0000",
         "fullName": "MainPage",
         "fileName": "unpackaged/pages/MainPage.page",
         "createdByName": "Trần Vỹ Trương",
@@ -38,7 +38,7 @@
         "createdById": "0050o00000WkyGGAAZ",
         "namespacePrefix": null,
         "lastModifiedById": "0050o00000WkyGGAAZ",
-        "lastModifiedDate": "2019-04-12T10:46:20.000+0000",
+        "lastModifiedDate": "2019-04-19T09:32:07.000+0000",
         "fullName": "Controller",
         "fileName": "unpackaged/classes/Controller.cls",
         "createdByName": "Trần Vỹ Trương",
@@ -61,6 +61,22 @@
         "lastModifiedByName": "Trần Vỹ Trương",
         "manageableState": "unmanaged",
         "type": "ApexClass",
+        "mmState": "clean"
+    },
+    "AddNewStudent.page": {
+        "id": "0660o000008sbCcAAI",
+        "name": "AddNewStudent",
+        "createdDate": "2019-04-19T06:32:29.000+0000",
+        "createdById": "0050o00000WkyGGAAZ",
+        "namespacePrefix": null,
+        "lastModifiedById": "0050o00000WkyGGAAZ",
+        "lastModifiedDate": "2019-04-19T09:33:08.000+0000",
+        "fullName": "AddNewStudent",
+        "fileName": "unpackaged/pages/AddNewStudent.page",
+        "createdByName": "Trần Vỹ Trương",
+        "lastModifiedByName": "Trần Vỹ Trương",
+        "manageableState": "unmanaged",
+        "type": "ApexPage",
         "mmState": "clean"
     }
 }

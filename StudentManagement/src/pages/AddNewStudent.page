@@ -1,0 +1,42 @@
+<apex:page showHeader="true" sidebar="true" controller="Controller" >
+<apex:form>
+<apex:pageMessages id="message"/>
+	<table>
+		<tr>
+			<td><apex:commandButton value='Back' action="{!goBack}"/></td>
+		</tr>
+		<tr>
+			<td>First Name</td><td><apex:inputText value="{!namef}" /></td>
+		</tr>
+		<tr>
+			<td>Last Name</td><td><apex:inputText value="{!namel}" /></td>
+		</tr>
+		<tr>
+			<td>Gender</td><td><apex:inputCheckbox value="{!gender}" /></td>
+		</tr>
+		<tr>
+			<td>Birthday</td><td><apex:inputText value="{!birthday}" /></td>
+		</tr>
+		<tr>
+			<td>Score 1</td><td><apex:inputText value="{!score1}" /></td>
+		</tr>
+		<tr>
+			<td>Score 2</td><td><apex:inputText value="{!score2}" /></td>
+		</tr>
+		<tr>
+			<td>Score 3</td><td><apex:inputText value="{!score3}" /></td>
+		</tr>
+		<tr>
+			<td>Class</td>
+			<td>
+				<apex:selectList multiselect="false" size="1" value="{!userselectSecondPage}" style="width: 200px">
+				 	<apex:selectOptions value="{!items}" > </apex:selectOptions>
+				</apex:selectList>
+			</td>
+		</tr>
+		<tr>
+			<td><apex:commandButton value='Add' action="{!doInsert}"/></td>
+		</tr>
+	</table>
+</apex:form>
+</apex:page>

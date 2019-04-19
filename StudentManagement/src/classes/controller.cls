@@ -2,10 +2,29 @@ public with sharing class Controller {
 	public List<Student__c> studentList {get;set;}
 	public String userinput {get; set;}
 	public String userselect {get; set;}
+	public String userselectSecondpage {get; set;}
 	public String sumstudents {get;set;}
 	public String idStudent {get;set;}
 	public Boolean isColumnChecked {get; set;}
+	public String namef {get; set;}
+	public String namel {get; set;}
+	public Boolean gender {get; set;}
+	public Date birthday {get; set;}
+	public Decimal score1 {get; set;}
+	public Decimal score2 {get; set;}
+	public Decimal score3 {get; set;}
 
+	public PageReference dosubmit(){
+	    PageReference pr = new PageReference('/apex/AddNewStudent');
+	    pr.setRedirect(true);
+	    return pr;
+	}
+	public PageReference goBack(){
+		PageReference pg = new PageReference('/apex/MainPage');
+	    pg.setRedirect(true);
+	    return pg;
+	}
+/*
 	public void deleteAllStudents(){
 		if(isColumnChecked){
 			//for(Student__c s : this.studentList){
@@ -14,7 +33,7 @@ public with sharing class Controller {
 		}
 		//this.actionSearch();
 	}
-
+*/
 
 	public List<SelectOption> getItems(){
 		List<SelectOption> options = new List<SelectOption>();
@@ -41,6 +60,32 @@ public with sharing class Controller {
 										FROM Student__c
 										WHERE Name LIKE: selectName OR Class__r.Name LIKE: selectClass];
 		return studentGetList;
+	}
+	public PageReference doInsert(){
+		PageReference ref = null;
+		try{
+			Class__c  c = [SELECT id 
+					FROM Class__c
+					WHERE Name =: this.userselectSecondpage];
+
+			Student__c student = new Student__c();
+			student.Namef__c = this.namef;
+			student.Namel__c = this.namel;
+			student.Gender__c = this.gender;
+			student.Birthday__c = this.birthday;
+			student.Score1__c = this.score1;
+			student.Score2__c = this.score2;
+			student.Score3__c = this.score3;
+			student.Name = this.namef + this.namel;
+			student.Class__c = c.id;
+			insert student;
+			ref = new PageReference('/apex/AddNewStudent');
+			ref.setRedirect(true);
+		} catch(Exception ex){
+			ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, ex.getMessage()));
+		}
+
+		return ref;
 	}
 	public PageReference actionDeleteStudent(){
 		String idStudentGet = ApexPages.CurrentPage().getParameters().get('idStudent');
