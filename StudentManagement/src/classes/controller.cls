@@ -1,5 +1,5 @@
 public with sharing class Controller {
-	public List<Student__c> studentList {get;set;}
+	public List<Output> OutputList {get;set;}
 	public String userinput {get; set;}
 	public String userselect {get; set;}
 	public String userselectSecondpage {get; set;}
@@ -14,6 +14,14 @@ public with sharing class Controller {
 	public Decimal score2 {get; set;}
 	public Decimal score3 {get; set;}
 
+	public class Output{
+		public Student__c student {get; set;}
+		public Boolean isSelected {get; set;}
+		public Output(Student__c s){
+			this.student = s;
+			this.isSelected = false;
+		}
+	}
 	public PageReference dosubmit(){
 	    PageReference pr = new PageReference('/apex/AddNewStudent');
 	    pr.setRedirect(true);
@@ -24,16 +32,6 @@ public with sharing class Controller {
 	    pg.setRedirect(true);
 	    return pg;
 	}
-/*
-	public void deleteAllStudents(){
-		if(isColumnChecked){
-			//for(Student__c s : this.studentList){
-			//	delete s;
-			//} 
-		}
-		//this.actionSearch();
-	}
-*/
 
 	public List<SelectOption> getItems(){
 		List<SelectOption> options = new List<SelectOption>();
@@ -44,7 +42,7 @@ public with sharing class Controller {
 
 		return options;
 	}
-	private List<Student__c> getStudent(){
+	private List<Output> getStudent(){
 		String selectName = '%'+ userinput + '%';
 		String selectClass = '%' + userselect + '%';
 		List<Student__c> studentGetList = [SELECT Namef__c
@@ -59,7 +57,11 @@ public with sharing class Controller {
 												,StudentId__c	 
 										FROM Student__c
 										WHERE Name LIKE: selectName OR Class__r.Name LIKE: selectClass];
-		return studentGetList;
+		List<Output> result = new List<Output>();
+		for(Student__c s : studentGetList){
+			result.add(new Output(s));
+		}
+		return result;
 	}
 	public PageReference doInsert(){
 		PageReference ref = null;
@@ -87,11 +89,20 @@ public with sharing class Controller {
 
 		return ref;
 	}
+	public PageReference actionDeleteStudentBeSelected(){
+		for(Output s : this.OutputList){
+			if(s.isSelected == true){
+				delete s.student;
+			}
+		}
+		this.actionSearch();
+		return null;
+	}
 	public PageReference actionDeleteStudent(){
 		String idStudentGet = ApexPages.CurrentPage().getParameters().get('idStudent');
-		for(Student__c s : this.studentList){
-			if(idStudentGet.equalsIgnoreCase(s.StudentId__c)){
-				delete s;
+		for(Output s : this.OutputList){
+			if(idStudentGet.equalsIgnoreCase(s.student.StudentId__c)){
+				delete s.student;
 			}
 		} 
 		this.actionSearch();
@@ -104,8 +115,8 @@ public with sharing class Controller {
 				ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR,'input from user can not be empty'));
 				return;
 			}
-			this.studentList = this.getStudent();
-			sumstudents =  'Total Students : '+ this.studentList.size();
+			this.OutputList = this.getStudent();
+			sumstudents =  'Total Students : '+ this.OutputList.size();
 		} catch(Exception ex) {
 			ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, ex.getMessage()));
 		}
@@ -113,3 +124,4 @@ public with sharing class Controller {
 }
 //https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref_actionFunction.htm
 // use acctionfunction
+// apex inputflied show table date

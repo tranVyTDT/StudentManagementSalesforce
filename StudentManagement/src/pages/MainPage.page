@@ -14,8 +14,6 @@
 			</apex:selectList>
 			<br/>
 			<apex:commandButton value="Search" action="{!actionSearch}" />
-			<apex:commandButton value="Add" action="{!doSubmit}" oncomplete="gotoAddNewStudentPage();"></apex:commandButton>
-			<apex:commandButton value="Delete"></apex:commandButton>
 		</apex:form>
 	</div>
 	<!-- showing the table-->
@@ -24,45 +22,47 @@
 			<apex:pageMessages id="message"/>
 			<apex:outputPanel id="pinserted">
 				<apex:pageBlock >
+				<apex:commandButton value="Add" action="{!doSubmit}" oncomplete="gotoAddNewStudentPage();"></apex:commandButton>
+				<apex:commandButton value="Delete" action="{!actionDeleteStudentBeSelected}" reRender="pinserted"></apex:commandButton>
 			      	<apex:pageBlockTable value="{!studentList}" var="s">
 			      		<apex:column>
 			      			<apex:facet name="header">
-								<apex:inputCheckbox value="{!isColumnChecked}" />
+								<apex:inputCheckbox />
 							</apex:facet>
-			      			<apex:inputCheckbox />
+			      			<apex:inputCheckbox value="{!s.isSelected}"/>
 			      		</apex:column>
 				   		<apex:column headerValue="First Name" >
-				   			<apex:outputField value="{!s.namef__c}"/>
+				   			<apex:outputField value="{!s.student.namef__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="Last Name" >
-				   			<apex:outputField value="{!s.namel__c}"/>
+				   			<apex:outputField value="{!s.student.namel__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="Birthday" >
-				   			<apex:outputField value="{!s.Birthday__c}"/>
+				   			<apex:outputField value="{!s.student.Birthday__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="Gerder">
-				   			<apex:inputCheckbox />
+				   			<apex:inputCheckbox value="{!s.student.Gender__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="Score1" >
-				   			<apex:outputField value="{!s.Score1__c}"/>
+				   			<apex:outputField value="{!s.student.Score1__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="Score2" >
-				   			<apex:outputField value="{!s.Score2__c}"/>
+				   			<apex:outputField value="{!s.student.Score2__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="Score3" >
-				   			<apex:outputField value="{!s.Score3__c}"/>
+				   			<apex:outputField value="{!s.student.Score3__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="Average Score" >
-				   			<apex:outputField value="{!s.AverageScore__c}"/>
+				   			<apex:outputField value="{!s.student.AverageScore__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="State" >
-				   			<apex:outputField value="{!s.State__c}"/>
+				   			<apex:outputField value="{!s.student.State__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="{!sumstudents}">
 				   				<a href="">update</a>
 				   				<span>|</span>
 				   				<apex:commandButton immediate="true" value="Delete" action="{!actionDeleteStudent}"  reRender="pinserted">
-				   					<apex:param value="{!s.StudentId__c}" assignTo="{!idStudent}"  name="idStudent"/>
+				   					<apex:param value="{!s.student.StudentId__c}" assignTo="{!idStudent}"  name="idStudent"/>
 				   				 </apex:commandButton>
 				   		</apex:column>
 			      	</apex:pageBlockTable>
