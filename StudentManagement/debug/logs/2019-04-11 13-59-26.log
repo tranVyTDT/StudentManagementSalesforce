@@ -1,0 +1,79 @@
+36.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+23:59:27.0 (428614)|USER_INFO|[EXTERNAL]|0050o00000WkyGG|ttvy@keizu.co.jp|Pacific Standard Time|GMT-07:00
+23:59:27.0 (475729)|EXECUTION_STARTED
+23:59:27.0 (483148)|CODE_UNIT_STARTED|[EXTERNAL]|0660o000008sEYc|VF: /apex/MainPage
+23:59:27.0 (1077184)|VF_DESERIALIZE_VIEWSTATE_BEGIN|0660o000008sEYc
+23:59:27.0 (18220503)|VF_DESERIALIZE_VIEWSTATE_END
+23:59:27.0 (19397047)|HEAP_ALLOCATE|[72]|Bytes:3
+23:59:27.0 (19472823)|HEAP_ALLOCATE|[77]|Bytes:152
+23:59:27.0 (19500425)|HEAP_ALLOCATE|[342]|Bytes:408
+23:59:27.0 (19525047)|HEAP_ALLOCATE|[355]|Bytes:408
+23:59:27.0 (19544725)|HEAP_ALLOCATE|[467]|Bytes:48
+23:59:27.0 (19592443)|HEAP_ALLOCATE|[139]|Bytes:6
+23:59:27.0 (19623916)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:136
+23:59:27.0 (19635017)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:10
+23:59:27.0 (19651489)|METHOD_ENTRY|[1]|01p0o00000GLKhZ|Controller.Controller()
+23:59:27.0 (19662252)|STATEMENT_EXECUTE|[1]
+23:59:27.0 (19670964)|STATEMENT_EXECUTE|[1]
+23:59:27.0 (19719198)|HEAP_ALLOCATE|[50]|Bytes:5
+23:59:27.0 (19753237)|HEAP_ALLOCATE|[56]|Bytes:5
+23:59:27.0 (19764797)|HEAP_ALLOCATE|[64]|Bytes:7
+23:59:27.0 (19788391)|SYSTEM_MODE_ENTER|false
+23:59:27.0 (19816731)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+23:59:27.0 (19830460)|SYSTEM_MODE_EXIT|false
+23:59:27.0 (19842531)|METHOD_EXIT|[1]|Controller
+23:59:27.0 (19859332)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:16
+23:59:27.0 (19873310)|VARIABLE_SCOPE_BEGIN|[15]|this|Controller|true|false
+23:59:27.0 (19958368)|VARIABLE_ASSIGNMENT|[15]|this|{}|0x650fb706
+23:59:27.0 (19980071)|SYSTEM_MODE_ENTER|false
+23:59:27.0 (19989143)|HEAP_ALLOCATE|[16]|Bytes:5
+23:59:27.0 (19995996)|STATEMENT_EXECUTE|[15]
+23:59:27.0 (19999090)|STATEMENT_EXECUTE|[16]
+23:59:27.0 (20056791)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{}|0x650fb706
+23:59:27.0 (20090218)|VARIABLE_SCOPE_BEGIN|[16]|selectName|String|false|false
+23:59:27.0 (20108071)|VARIABLE_ASSIGNMENT|[16]|selectName|null
+23:59:27.0 (20115209)|STATEMENT_EXECUTE|[17]
+23:59:27.0 (20119894)|HEAP_ALLOCATE|[17]|Bytes:125
+23:59:27.0 (20148732)|HEAP_ALLOCATE|[17]|Bytes:4
+23:59:27.0 (21446717)|SOQL_EXECUTE_BEGIN|[17]|Aggregations:0|SELECT Namef__c, Namel__c, Birthday__c, Gender__c, Score1__c, Score2__c, Score3__c, AverageScore__c, State__c FROM Student__c
+23:59:27.0 (27431521)|SOQL_EXECUTE_END|[17]|Rows:4
+23:59:27.0 (27464073)|HEAP_ALLOCATE|[17]|Bytes:20
+23:59:27.0 (27512577)|HEAP_ALLOCATE|[17]|Bytes:1265
+23:59:27.0 (27551743)|HEAP_ALLOCATE|[17]|Bytes:20
+23:59:27.0 (27577869)|VARIABLE_SCOPE_BEGIN|[17]|data|List<Student__c>|true|false
+23:59:27.0 (27703926)|VARIABLE_ASSIGNMENT|[17]|data|[{"Namef__c":"vy","Namel__c":"truong","Birthday__c":"1998-01-01T00:00:00.000Z","Gender__c":true,"Score1__c":9.00,"Score2__c":10.00,"Score3__c":9.00,"AverageScore__c":9.33,"State__c":"Passed","Id":"a0I0o000013dfsiEAA"},{"Namef__c":"vinh","Namel__c":"tran","Birthday__c":"1999-02-03T00:00:00.000Z","Gender__c":true,"Score1__c":4.00,"Score2__c":4.00,"Score3__c":4.00,"AverageScore__c":4.00,"State__c":"Failed","Id":"a0I0o000013dfsjEAA"},{"Namef__c":"an","Namel__c":"nguyen","Birthday__c":"1993-04-06T00:00:00.000Z","Gender__c":false,"Score1__c":4.00,"Score2__c":4.00,"Score3__c":8.00,"AverageScore__c":5.33,"State__c":"Passed","Id":"a0I0o000013dfskEAA"},{"Namef__c":"anh","Namel__c":"le","Birthday__c":"2000-04-07T00:00:00.000Z","Gender__c":false,"Score1__c":9.00,"Score2__c":9.00,"Score3__c":3.00,"AverageScore__c":7.00,"State__c":"Passed","Id":"a0I0o000013dfslEAA"}]|0x26eaca11
+23:59:27.0 (27725812)|STATEMENT_EXECUTE|[27]
+23:59:27.0 (28010288)|VARIABLE_SCOPE_BEGIN|[27]|iterator|System.Iterator|true|false
+23:59:27.0 (28083614)|VARIABLE_ASSIGNMENT|[27]|iterator|{}|0x59cde1ec
+23:59:27.0 (28149036)|HEAP_ALLOCATE|[28]|Bytes:5
+23:59:27.0 (28179614)|STATEMENT_EXECUTE|[28]
+23:59:27.0 (28182296)|STATEMENT_EXECUTE|[29]
+23:59:27.0 (28200782)|HEAP_ALLOCATE|[29]|Bytes:44
+23:59:27.0 (28210307)|VARIABLE_SCOPE_BEGIN|[29]|st|Student__c|true|false
+23:59:27.0 (28248007)|VARIABLE_ASSIGNMENT|[29]|st|{"Namef__c":"vy","Namel__c":"truong","Birthday__c":"1998-01-01T00:00:00.000Z","Gender__c":true,"Score1__c":9.00,"Score2__c":10.00,"Score3__c":9.00,"AverageScore__c":9.33,"State__c":"Passed","Id":"a0I0o000013dfsiEAA"}|0x2938a047
+23:59:27.0 (28263279)|STATEMENT_EXECUTE|[30]
+23:59:27.0 (28322347)|EXCEPTION_THROWN|[30]|System.SObjectException: SObject row was retrieved via SOQL without querying the requested field: Student__c.Name
+23:59:27.0 (28378619)|HEAP_ALLOCATE|[30]|Bytes:92
+23:59:27.0 (28398597)|SYSTEM_MODE_EXIT|false
+23:59:27.0 (28517479)|FATAL_ERROR|System.SObjectException: SObject row was retrieved via SOQL without querying the requested field: Student__c.Name
+
+Class.Controller.getStudent: line 30, column 1
+23:59:27.91 (91875076)|CUMULATIVE_LIMIT_USAGE
+23:59:27.91 (91875076)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 4 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:59:27.91 (91875076)|CUMULATIVE_LIMIT_USAGE_END
+
+23:59:27.0 (91940759)|CODE_UNIT_FINISHED|VF: /apex/MainPage
+23:59:27.0 (92863012)|EXECUTION_FINISHED

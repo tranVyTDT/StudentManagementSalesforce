@@ -1,0 +1,17 @@
+{
+    "projectName": "StudentManagement",
+    "username": "ttvy@keizu.co.jp",
+    "id": "5cd5c390-59d5-11e9-a82d-3325c6143c9b",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://ap8.salesforce.com",
+    "workspace": "C:\\Users\\Dev002\\Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}

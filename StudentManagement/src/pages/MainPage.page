@@ -1,0 +1,75 @@
+<apex:page showHeader="true" sidebar="true" controller="Controller" >
+<style type="text/css">
+	
+</style>
+		<!-- get input form user-->
+	<div>
+		<apex:form>
+			<span>Name :</span><apex:inputText value="{!userinput}" id="txtuserinput"/>
+			<apex:inputCheckbox ></apex:inputCheckbox><span>increasing</span>
+			<br/>
+			<span>Class :</span>
+			<apex:selectList multiselect="false" size="1" value="{!userselect}" style="width: 200px">
+				 <apex:selectOptions value="{!items}" > </apex:selectOptions>
+			</apex:selectList>
+			<br/>
+			<apex:commandButton value="Search" action="{!actionSearch}" />
+			<apex:commandButton value="Add"></apex:commandButton>
+			<apex:commandButton value="Delete" action="{!deleteAllStudents}"></apex:commandButton>
+		</apex:form>
+	</div>
+	<!-- showing the table-->
+	<div>
+		<apex:form>
+			<apex:pageMessages id="message"/>
+			<apex:outputPanel id="pinserted">
+				<apex:pageBlock >
+			      	<apex:pageBlockTable value="{!studentList}" var="s">
+			      		<apex:column>
+			      			<apex:facet name="header">
+								<apex:inputCheckbox value="{!isColumnChecked}" />
+							</apex:facet>
+			      			<apex:inputCheckbox />
+			      		</apex:column>
+				   		<apex:column headerValue="First Name" >
+				   			<apex:outputField value="{!s.namef__c}"/>
+				   		</apex:column>
+				   		<apex:column headerValue="Last Name" >
+				   			<apex:outputField value="{!s.namel__c}"/>
+				   		</apex:column>
+				   		<apex:column headerValue="Birthday" >
+				   			<apex:outputField value="{!s.Birthday__c}"/>
+				   		</apex:column>
+				   		<apex:column headerValue="Gerder">
+				   			<apex:inputCheckbox />
+				   		</apex:column>
+				   		<apex:column headerValue="Score1" >
+				   			<apex:outputField value="{!s.Score1__c}"/>
+				   		</apex:column>
+				   		<apex:column headerValue="Score2" >
+				   			<apex:outputField value="{!s.Score2__c}"/>
+				   		</apex:column>
+				   		<apex:column headerValue="Score3" >
+				   			<apex:outputField value="{!s.Score3__c}"/>
+				   		</apex:column>
+				   		<apex:column headerValue="Average Score" >
+				   			<apex:outputField value="{!s.AverageScore__c}"/>
+				   		</apex:column>
+				   		<apex:column headerValue="State" >
+				   			<apex:outputField value="{!s.State__c}"/>
+				   		</apex:column>
+				   		<apex:column headerValue="{!sumstudents}">
+				   				<a href="">update</a>
+				   				<span>|</span>
+				   				<apex:commandButton immediate="true" value="Delete" action="{!actionDeleteStudent}"  reRender="pinserted">
+				   					<apex:param value="{!s.StudentId__c}" assignTo="{!idStudent}"  name="idStudent"/>
+				   				 </apex:commandButton>
+				   		</apex:column>
+			      	</apex:pageBlockTable>
+		   		</apex:pageBlock>
+	   		</apex:outputPanel>
+   		</apex:form>	
+	</div>
+
+</apex:page>
+
