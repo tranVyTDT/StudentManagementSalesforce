@@ -1,10 +1,10 @@
 <apex:page showHeader="true" sidebar="true" controller="Controller" >
 <style type="text/css">
-	
+
 </style>
 		<!-- get input form user-->
 	<div>
-		<apex:form>
+		<apex:form >
 			<span>Name :</span><apex:inputText value="{!userinput}" id="txtuserinput"/>
 			<apex:inputCheckbox ></apex:inputCheckbox><span>increasing</span>
 			<br/>
@@ -18,24 +18,24 @@
 	</div>
 	<!-- showing the table-->
 	<div>
-		<apex:form>
+		<apex:form >
 			<apex:pageMessages id="message"/>
 			<apex:outputPanel id="pinserted">
 				<apex:pageBlock >
 				<apex:commandButton value="Add" action="{!doSubmit}" oncomplete="gotoAddNewStudentPage();"></apex:commandButton>
 				<apex:commandButton value="Delete" action="{!actionDeleteStudentBeSelected}" reRender="pinserted"></apex:commandButton>
-			      	<apex:pageBlockTable value="{!studentList}" var="s">
-			      		<apex:column>
+			      	<apex:pageBlockTable value="{!OutputList}" var="s">
+			      		<apex:column >
 			      			<apex:facet name="header">
 								<apex:inputCheckbox />
 							</apex:facet>
 			      			<apex:inputCheckbox value="{!s.isSelected}"/>
 			      		</apex:column>
 				   		<apex:column headerValue="First Name" >
-				   			<apex:outputField value="{!s.student.namef__c}"/>
+				   			<apex:outputField value="{!s.student.Namef__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="Last Name" >
-				   			<apex:outputField value="{!s.student.namel__c}"/>
+				   			<apex:outputField value="{!s.student.Namel__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="Birthday" >
 				   			<apex:outputField value="{!s.student.Birthday__c}"/>
@@ -68,7 +68,7 @@
 			      	</apex:pageBlockTable>
 		   		</apex:pageBlock>
 	   		</apex:outputPanel>
-   		</apex:form>	
+   		</apex:form>
 	</div>
 <script>
 function gotoAddNewStudentPage() {
@@ -77,4 +77,3 @@ function gotoAddNewStudentPage() {
 </script>
 
 </apex:page>
-

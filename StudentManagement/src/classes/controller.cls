@@ -54,7 +54,7 @@ public with sharing class Controller {
 												,Score3__c
 												,AverageScore__c
 												,State__c
-												,StudentId__c	 
+												,StudentId__c
 										FROM Student__c
 										WHERE Name LIKE: selectName OR Class__r.Name LIKE: selectClass];
 		List<Output> result = new List<Output>();
@@ -66,7 +66,7 @@ public with sharing class Controller {
 	public PageReference doInsert(){
 		PageReference ref = null;
 		try{
-			Class__c  c = [SELECT id 
+			Class__c  c = [SELECT id
 					FROM Class__c
 					WHERE Name =: this.userselectSecondpage];
 
@@ -104,12 +104,13 @@ public with sharing class Controller {
 			if(idStudentGet.equalsIgnoreCase(s.student.StudentId__c)){
 				delete s.student;
 			}
-		} 
+		}
 		this.actionSearch();
 
 		return null;
 	}
 	public void actionSearch() {
+		System.System.debug('*** object: ' );
 		try {
 			if(String.isBlank(this.userinput)){
 				ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR,'input from user can not be empty'));

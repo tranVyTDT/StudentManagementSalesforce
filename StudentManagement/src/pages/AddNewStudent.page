@@ -1,9 +1,9 @@
 <apex:page showHeader="true" sidebar="true" controller="Controller" >
-<apex:form>
+<apex:form >
 <apex:pageMessages id="message"/>
 	<table>
 		<tr>
-			<td><apex:commandButton value='Back' action="{!goBack}"/></td>
+			<td><apex:commandButton value="Back" action="{!goBack}"/></td>
 		</tr>
 		<tr>
 			<td>First Name</td><td><apex:inputText value="{!namef}" /></td>
@@ -35,7 +35,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td><apex:commandButton value='Add' action="{!doInsert}"/></td>
+			<td><apex:commandButton value="Add" action="{!doInsert}"/></td>
 		</tr>
 	</table>
 </apex:form>
