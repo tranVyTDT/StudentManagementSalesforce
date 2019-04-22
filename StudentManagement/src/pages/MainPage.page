@@ -1,8 +1,7 @@
-<apex:page showHeader="true" sidebar="true" controller="Controller" >
+<apex:page showHeader="true" sidebar="true" controller="Controller" docType="html-5.0" >
 <style type="text/css">
 
 </style>
-		<!-- get input form user-->
 	<div>
 		<apex:form >
 			<span>Name :</span><apex:inputText value="{!userinput}" id="txtuserinput"/>
@@ -13,7 +12,9 @@
 				 <apex:selectOptions value="{!items}" > </apex:selectOptions>
 			</apex:selectList>
 			<br/>
-			<apex:commandButton value="Search" action="{!actionSearch}" />
+			<apex:pageBlockSection >
+				<apex:inputField value="{! fDate  }" type="auto" label="From" showDatePicker="true" />
+			</apex:pageBlockSection>
 		</apex:form>
 	</div>
 	<!-- showing the table-->

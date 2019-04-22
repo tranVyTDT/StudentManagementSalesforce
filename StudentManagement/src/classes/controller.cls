@@ -1,5 +1,7 @@
 public with sharing class Controller {
+	public Date fDate { get; set; }
 	public List<Output> OutputList {get;set;}
+	public StudentSelection studentSelection {get; set;}
 	public String userinput {get; set;}
 	public String userselect {get; set;}
 	public String userselectSecondpage {get; set;}
@@ -13,7 +15,15 @@ public with sharing class Controller {
 	public Decimal score1 {get; set;}
 	public Decimal score2 {get; set;}
 	public Decimal score3 {get; set;}
-
+	public class StudentSelection{
+		public Boolean increasing {get; set;}
+		public String name {get; set;}
+		public String className {get; set;}
+		public Date dateFrom {get; set;}
+		public Date dateTo {get; set;}
+		public List<Output> outputList;
+		public StudentSelection(){}
+	}
 	public class Output{
 		public Student__c student {get; set;}
 		public Boolean isSelected {get; set;}
