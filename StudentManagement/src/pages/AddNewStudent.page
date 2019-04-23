@@ -1,4 +1,4 @@
-<apex:page showHeader="true" sidebar="true" controller="Controller" >
+<apex:page showHeader="true" sidebar="true" controller="Controller" docType="html-5.0" >
 <apex:form >
 <apex:pageMessages id="message"/>
 	<table>
@@ -15,7 +15,7 @@
 			<td>Gender</td><td><apex:inputCheckbox value="{!gender}" /></td>
 		</tr>
 		<tr>
-			<td>Birthday</td><td><apex:inputText value="{!birthday}" /></td>
+			<td>Birthday</td><td><apex:input value="{!birthday}" type="date" /></td>
 		</tr>
 		<tr>
 			<td>Score 1</td><td><apex:inputText value="{!score1}" /></td>

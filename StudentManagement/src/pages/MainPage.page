@@ -1,21 +1,60 @@
-<apex:page showHeader="true" sidebar="true" controller="Controller" docType="html-5.0" >
+<apex:page showHeader="true" sidebar="true" controller="Controller"  docType="html-5.0" >
 <style type="text/css">
-
+	.dateFormat{
+		display: none;
+	}
+	.button{
+		width:31%;
+		margin:1%;
+		padding:0px;
+		border:1px solid #000000;
+		background:#ffffff !important
+	}
 </style>
+		<!-- get input form user-->
 	<div>
 		<apex:form >
-			<span>Name :</span><apex:inputText value="{!userinput}" id="txtuserinput"/>
-			<apex:inputCheckbox ></apex:inputCheckbox><span>increasing</span>
-			<br/>
-			<span>Class :</span>
-			<apex:selectList multiselect="false" size="1" value="{!userselect}" style="width: 200px">
-				 <apex:selectOptions value="{!items}" > </apex:selectOptions>
-			</apex:selectList>
-			<br/>
-			<apex:pageBlockSection >
-				<apex:inputField value="{! fDate  }" type="auto" label="From" showDatePicker="true" />
-			</apex:pageBlockSection>
+			<table>
+				<tr>
+						<td >Name : </td>
+						<td >
+							<apex:inputText value="{!objkeySearch.studentName}" style="width: 200px;height: 17px;"/>
+						</td>
+						<td>
+							<apex:inputCheckbox value="{!objkeySearch.increasing}"  />
+						</td>
+						<td>
+							<span>increasing</span>
+						</td>
+				</tr>
+				<tr>
+						<td>Class : </td>
+						<td>
+							<apex:selectList multiselect="false" size="1" value="{!objkeySearch.className}" style="width: 204px;height: 22px;">
+								 <apex:selectOptions value="{!items}" > </apex:selectOptions>
+							</apex:selectList>
+						</td>
+				</tr>
+				<tr>
+						<td> BirthDay : </td>
+						<td>
+							<apex:inputField value="{!objKeySearch.objStudentFrom.BirthDay__c}" />
+						</td>
+						<td> ~ </td>
+						<td>
+							<apex:inputField value="{!objKeySearch.objStudentTo.BirthDay__c}" />
+						</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+							<apex:commandButton value="Search" action="{!actionSearch}"  styleClass="button"/>
+							<apex:commandButton value="Add" action="{!doSubmit}" oncomplete="gotoAddNewStudentPage();"  styleClass="button" />
+							<apex:commandButton value="Delete" action="{!actionDeleteStudentBeSelected}" reRender="pinserted"  styleClass="button" />
+						</td>
+				</tr>
+			</table>
 		</apex:form>
+
 	</div>
 	<!-- showing the table-->
 	<div>
@@ -23,8 +62,6 @@
 			<apex:pageMessages id="message"/>
 			<apex:outputPanel id="pinserted">
 				<apex:pageBlock >
-				<apex:commandButton value="Add" action="{!doSubmit}" oncomplete="gotoAddNewStudentPage();"></apex:commandButton>
-				<apex:commandButton value="Delete" action="{!actionDeleteStudentBeSelected}" reRender="pinserted"></apex:commandButton>
 			      	<apex:pageBlockTable value="{!OutputList}" var="s">
 			      		<apex:column >
 			      			<apex:facet name="header">

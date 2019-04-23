@@ -4,16 +4,92 @@
 		"selected_items":
 		[
 			[
-				"a",
-				"action"
+				"is",
+				"isSelected"
 			],
 			[
-				"is",
-				"isColumnChecked"
+				"student",
+				"studentList"
+			],
+			[
+				"Student",
+				"Student__c"
+			],
+			[
+				"stu",
+				"Students"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"name",
+				"namel"
+			],
+			[
+				"r",
+				"ref"
+			],
+			[
+				"clas",
+				"className__c"
+			],
+			[
+				"set",
+				"PUBLIC setRedirect(Boolean redirect) \tSystem.PageReference"
+			],
+			[
+				"page",
+				"PageReference"
+			],
+			[
+				"cl",
+				"class"
+			],
+			[
+				"sco",
+				"score3"
+			],
+			[
+				"score",
+				"score2"
+			],
+			[
+				"b",
+				"Birthday__c"
+			],
+			[
+				"Name",
+				"Namel__c"
+			],
+			[
+				"na",
+				"Namef__c"
 			],
 			[
 				"Stu",
-				"StudentId__c"
+				"student"
+			],
+			[
+				"sel",
+				"apex:selectOptions"
+			],
+			[
+				"ch",
+				"apex:inputCheckbox"
+			],
+			[
+				"in",
+				"apex:inputText"
+			],
+			[
+				"tab",
+				"table\tTag"
+			],
+			[
+				"a",
+				"action"
 			],
 			[
 				"equa",
@@ -44,10 +120,6 @@
 				"PageReference\t[Standard Apex Class]"
 			],
 			[
-				"re",
-				"reRender\t(Object)"
-			],
-			[
 				"out",
 				"apex:outputText"
 			],
@@ -56,16 +128,8 @@
 				"getStudent"
 			],
 			[
-				"cl",
-				"className"
-			],
-			[
 				"c",
 				"className"
-			],
-			[
-				"clas",
-				"className__C"
 			],
 			[
 				"class",
@@ -82,10 +146,6 @@
 			[
 				"se",
 				"apex:selectList"
-			],
-			[
-				"in",
-				"apex:inputField"
 			],
 			[
 				"ape",
@@ -107,18 +167,27 @@
 			"file": "src/pages/MainPage.page",
 			"settings":
 			{
-				"buffer_size": 2778,
+				"buffer_size": 3140,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/pages/AddNewStudent.page",
+			"settings":
+			{
+				"buffer_size": 1138,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "src/classes/controller.cls",
 			"settings":
 			{
-				"buffer_size": 2121,
+				"buffer_size": 4222,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -163,9 +232,9 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Dev002/Documents/StudentManagement",
-		"/C/Users/Dev002/Documents/StudentManagement/src",
-		"/C/Users/Dev002/Documents/StudentManagement/src/classes"
+		"/C/Users/Dev002/Desktop/StudentManagementSalesforce/StudentManagement",
+		"/C/Users/Dev002/Desktop/StudentManagementSalesforce/StudentManagement/src",
+		"/C/Users/Dev002/Desktop/StudentManagementSalesforce/StudentManagement/src/pages"
 	],
 	"file_history":
 	[
@@ -175,7 +244,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -189,6 +258,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"studentList",
+			"Output",
+			"message"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -206,7 +278,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -215,15 +287,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2778,
+						"buffer_size": 3140,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2776,
-								2776
+								0,
+								0
 							]
 						],
 						"settings":
@@ -232,7 +304,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 864.0,
+						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -240,19 +312,47 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/classes/controller.cls",
+					"file": "src/pages/AddNewStudent.page",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2121,
+						"buffer_size": 1138,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2121,
-								2121
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Visualforce.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/classes/controller.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4222,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								409,
+								409
 							]
 						],
 						"settings":
@@ -261,7 +361,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 702.0,
+						"translation.y": 594.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -272,7 +372,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -303,7 +403,7 @@
 	"menu_visible": true,
 	"output.MavensMate-OutputPanel":
 	{
-		"height": 158.0
+		"height": 332.0
 	},
 	"output.find_results":
 	{
@@ -313,7 +413,7 @@
 	"project": "StudentManagement.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -351,7 +451,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 261.0,
+	"side_bar_width": 101.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

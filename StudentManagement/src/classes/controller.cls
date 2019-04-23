@@ -1,7 +1,6 @@
 public with sharing class Controller {
-	public Date fDate { get; set; }
 	public List<Output> OutputList {get;set;}
-	public StudentSelection studentSelection {get; set;}
+	public KeySearchDTO objKeySearch {get; set;}
 	public String userinput {get; set;}
 	public String userselect {get; set;}
 	public String userselectSecondpage {get; set;}
@@ -15,15 +14,20 @@ public with sharing class Controller {
 	public Decimal score1 {get; set;}
 	public Decimal score2 {get; set;}
 	public Decimal score3 {get; set;}
-	public class StudentSelection{
+
+	public class KeySearchDTO{
 		public Boolean increasing {get; set;}
-		public String name {get; set;}
+		public String studentName {get; set;}
 		public String className {get; set;}
-		public Date dateFrom {get; set;}
-		public Date dateTo {get; set;}
-		public List<Output> outputList;
-		public StudentSelection(){}
+		public Student__c objStudentTo {get; set;}
+		public Student__c objStudentFrom {get; set;}
+
+		public KeySearchDTO() {
+			this.objStudentFrom = new Student__c();
+			this.objStudentTo = new Student__c();
+		}
 	}
+
 	public class Output{
 		public Student__c student {get; set;}
 		public Boolean isSelected {get; set;}
@@ -53,8 +57,6 @@ public with sharing class Controller {
 		return options;
 	}
 	private List<Output> getStudent(){
-		String selectName = '%'+ userinput + '%';
-		String selectClass = '%' + userselect + '%';
 		List<Student__c> studentGetList = [SELECT Namef__c
 												,Namel__c
 												,Birthday__c
@@ -66,16 +68,28 @@ public with sharing class Controller {
 												,State__c
 												,StudentId__c
 										FROM Student__c
-										WHERE Name LIKE: selectName OR Class__r.Name LIKE: selectClass];
+										WHERE Name LIKE: this.objKeySearch.studentName
+										OR Class__r.Name LIKE: this.objKeySearch.className
+										OR (Student__c.Birthday__c >	 :this.objKeySearch.objStudentFrom.Birthday__c
+										AND Student__c.Birthday__c < :this.objKeySearch.objStudentFrom.Birthday__c) ];
 		List<Output> result = new List<Output>();
 		for(Student__c s : studentGetList){
 			result.add(new Output(s));
 		}
+		if(this.objKeySearch.increasing){
+			result.sort();
+		}
+		System.debug('*** result: ' + result.size());
 		return result;
 	}
 	public PageReference doInsert(){
+
+		//System.debug('*** birthday: ');
 		PageReference ref = null;
+		//System.debug('*** birthday: ' + this.birthday);
+		//System.debug('*** birthday: ');
 		try{
+			//System.debug('*** birthday: ');
 			Class__c  c = [SELECT id
 					FROM Class__c
 					WHERE Name =: this.userselectSecondpage];
@@ -84,7 +98,7 @@ public with sharing class Controller {
 			student.Namef__c = this.namef;
 			student.Namel__c = this.namel;
 			student.Gender__c = this.gender;
-			student.Birthday__c = this.birthday;
+			student.Birthday__c = Date.valueOf(this.birthday);
 			student.Score1__c = this.score1;
 			student.Score2__c = this.score2;
 			student.Score3__c = this.score3;
@@ -94,6 +108,7 @@ public with sharing class Controller {
 			ref = new PageReference('/apex/AddNewStudent');
 			ref.setRedirect(true);
 		} catch(Exception ex){
+			System.debug('*** birthday: ' + this.birthday);
 			ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, ex.getMessage()));
 		}
 
@@ -120,12 +135,13 @@ public with sharing class Controller {
 		return null;
 	}
 	public void actionSearch() {
-		System.System.debug('*** object: ' );
+		System.debug('*** object: ' + this.objKeySearch.studentName); // be null
 		try {
-			if(String.isBlank(this.userinput)){
+			if(String.isBlank(this.objKeySearch.studentName)){
 				ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR,'input from user can not be empty'));
 				return;
 			}
+			System.System.debug('*** OutputList: ' + this.OutputList.size());
 			this.OutputList = this.getStudent();
 			sumstudents =  'Total Students : '+ this.OutputList.size();
 		} catch(Exception ex) {
