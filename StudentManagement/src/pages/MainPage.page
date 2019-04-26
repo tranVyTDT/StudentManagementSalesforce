@@ -8,7 +8,7 @@
 		margin:1%;
 		padding:0px;
 		border:1px solid #000000;
-		background:#ffffff !important
+		background:#78909c !important
 	}
 </style>
 		<!-- get input form user-->
@@ -18,7 +18,7 @@
 				<tr>
 						<td >Name : </td>
 						<td >
-							<apex:inputText value="{!objkeySearch.studentName}" style="width: 200px;height: 17px;"/>
+							<apex:inputText value="{!objKeySearch.studentName}" style="width: 200px;height: 17px;"/>
 						</td>
 						<td>
 							<apex:inputCheckbox value="{!objkeySearch.increasing}"  />
@@ -38,19 +38,20 @@
 				<tr>
 						<td> BirthDay : </td>
 						<td>
-							<apex:inputField value="{!objKeySearch.objStudentFrom.BirthDay__c}" />
+							<apex:inputField value="{!objKeySearch.objStudentFrom.Birthday__c}" />
 						</td>
 						<td> ~ </td>
 						<td>
-							<apex:inputField value="{!objKeySearch.objStudentTo.BirthDay__c}" />
+							<apex:inputField value="{!objKeySearch.objStudentTo.Birthday__c}" />
 						</td>
 				</tr>
 				<tr>
 					<td colspan="4">
-							<apex:commandButton value="Search" action="{!actionSearch}"  styleClass="button"/>
-							<apex:commandButton value="Add" action="{!doSubmit}" oncomplete="gotoAddNewStudentPage();"  styleClass="button" />
-							<apex:commandButton value="Delete" action="{!actionDeleteStudentBeSelected}" reRender="pinserted"  styleClass="button" />
-						</td>
+						<apex:commandButton value="Search" action="{!actionSearch}"  styleClass="button"/>
+						<apex:commandButton value="Add" action="{!doSubmit}" oncomplete="gotoAddNewStudentPage();" styleClass="button" />
+						<apex:commandButton value="Delete" action="{!actionDeleteStudentBeSelected}" styleClass="button" 
+						onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }"/>
+					</td>
 				</tr>
 			</table>
 		</apex:form>

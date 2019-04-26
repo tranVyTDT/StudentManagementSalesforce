@@ -25,6 +25,12 @@ public with sharing class Controller {
 		public KeySearchDTO() {
 			this.objStudentFrom = new Student__c();
 			this.objStudentTo = new Student__c();
+			this.increasing = false;
+			this.studentName = '';
+			this.className = '';
+		}
+		public void search(KeySearchDTO k){
+			this.studentName = k.studentName;
 		}
 	}
 
@@ -135,10 +141,12 @@ public with sharing class Controller {
 		return null;
 	}
 	public void actionSearch() {
-		System.debug('*** object: ' + this.objKeySearch.studentName); // be null
+		this.objKeySearch = new KeySearchDTO();
+		this.objKeySearch.search(this.objKeySearch);
+		System.debug(this.objKeySearch.studentName);
 		try {
 			if(String.isBlank(this.objKeySearch.studentName)){
-				ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR,'input from user can not be empty'));
+				ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR,'name can not be empty'));
 				return;
 			}
 			System.System.debug('*** OutputList: ' + this.OutputList.size());
@@ -150,5 +158,5 @@ public with sharing class Controller {
 	}
 }
 //https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref_actionFunction.htm
-// use acctionfunction
-// apex inputflied show table date
+// use acctionfunction for any button
+// https://developer.salesforce.com/forums/?id=906F0000000BKD1IAO

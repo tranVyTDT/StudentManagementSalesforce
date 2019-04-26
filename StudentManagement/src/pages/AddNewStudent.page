@@ -1,41 +1,47 @@
 <apex:page showHeader="true" sidebar="true" controller="Controller" docType="html-5.0" >
+<style type="text/css">
+	.input{
+		width: 200px !important
+	}
+
+</style>
 <apex:form >
 <apex:pageMessages id="message"/>
 	<table>
 		<tr>
-			<td><apex:commandButton value="Back" action="{!goBack}"/></td>
+			<td><apex:commandButton value="Back" action="{!goBack}" style="background: #ffffff;border: 0px ;text-decoration: underline"/></td>
 		</tr>
 		<tr>
-			<td>First Name</td><td><apex:inputText value="{!namef}" /></td>
+			<td>First Name</td><td><apex:inputText value="{!namef}" styleClass="input"/></td>
 		</tr>
 		<tr>
-			<td>Last Name</td><td><apex:inputText value="{!namel}" /></td>
+			<td>Last Name</td><td><apex:inputText value="{!namel}" styleClass="input"/></td>
 		</tr>
 		<tr>
-			<td>Gender</td><td><apex:inputCheckbox value="{!gender}" /></td>
+			<td>Gender</td><td><apex:inputCheckbox value="{!gender}" styleClass="input"/></td>
 		</tr>
 		<tr>
-			<td>Birthday</td><td><apex:input value="{!birthday}" type="date" /></td>
+			<td>Birthday</td><td><apex:input value="{!birthday}" type="date" styleClass="input"/></td>
 		</tr>
 		<tr>
-			<td>Score 1</td><td><apex:inputText value="{!score1}" /></td>
+			<td>Score 1</td><td><apex:inputText value="{!score1}" styleClass="input"/></td>
 		</tr>
 		<tr>
-			<td>Score 2</td><td><apex:inputText value="{!score2}" /></td>
+			<td>Score 2</td><td><apex:inputText value="{!score2}" styleClass="input"/></td>
 		</tr>
 		<tr>
-			<td>Score 3</td><td><apex:inputText value="{!score3}" /></td>
+			<td>Score 3</td><td><apex:inputText value="{!score3}" styleClass="input"/></td>
 		</tr>
 		<tr>
 			<td>Class</td>
 			<td>
-				<apex:selectList multiselect="false" size="1" value="{!userselectSecondPage}" style="width: 200px">
+				<apex:selectList multiselect="false" size="1" value="{!userselectSecondPage}" styleClass="input">
 				 	<apex:selectOptions value="{!items}" > </apex:selectOptions>
 				</apex:selectList>
 			</td>
 		</tr>
-		<tr>
-			<td><apex:commandButton value="Add" action="{!doInsert}"/></td>
+		<tr><td></td>
+			<td colspan="2"><apex:commandButton value="Add" action="{!doInsert}" style="background: #78909c;width: 200px"/></td>
 		</tr>
 	</table>
 </apex:form>
