@@ -11,4 +11,19 @@ trigger triggerStudent on Student__c (before insert
 			handle.onBeforeInsert(Trigger.new);
 		}
 	}
+	else
+	{
+		if(Trigger.insert)
+		{
+			handle.onAfterInsert(Trigger.new);
+		}
+		if(Trigger.delete)
+		{
+			handle.onAfterDelete(Trigger.new);
+		}
+		if(Trigger.update)
+		{
+			handle.onAfterUpdate(Trigger.new);
+		}
+	}
 }

@@ -199,10 +199,13 @@
 			}
 		},
 		{
+			"contents": "public with sharing class TriggerHandle \n{\n\tpublic TriggerHandle () \n\t{\n\t\t\n\t}\n\tpublic void onBeforeInsert (List<Student__c> newStudentList)\n\t{\n\t\t\n\t}\n}",
 			"file": "src/classes/TriggerHandle.cls",
+			"file_size": 148,
+			"file_write_time": 132013387467612916,
 			"settings":
 			{
-				"buffer_size": 148,
+				"buffer_size": 150,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -316,8 +319,8 @@
 						"selection":
 						[
 							[
-								773,
-								776
+								665,
+								634
 							]
 						],
 						"settings":
@@ -326,7 +329,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 26.0,
+						"translation.y": 16.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -345,8 +348,8 @@
 						"selection":
 						[
 							[
-								2595,
-								2595
+								3188,
+								3188
 							]
 						],
 						"settings":
@@ -395,15 +398,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 148,
+						"buffer_size": 150,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								142,
-								142
+								145,
+								145
 							]
 						],
 						"settings":
