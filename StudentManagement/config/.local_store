@@ -46,5 +46,49 @@
         "manageableState": "unmanaged",
         "type": "ApexClass",
         "mmState": "clean"
+    },
+    "triggerStudent.trigger": {
+        "createdById": "0050o00000WkyGGAAZ",
+        "createdByName": "Trần Vỹ Trương",
+        "createdDate": "2019-05-03T06:18:02.000Z",
+        "fileName": "unpackaged/triggers/triggerStudent.trigger",
+        "fullName": "triggerStudent",
+        "id": "01q0o000000jKhrAAE",
+        "lastModifiedById": "0050o00000WkyGGAAZ",
+        "lastModifiedByName": "Trần Vỹ Trương",
+        "lastModifiedDate": "2019-05-03T06:18:02.000Z",
+        "manageableState": "unmanaged",
+        "type": "ApexTrigger",
+        "mmState": "clean"
+    },
+    "triggerHandle.cls": {
+        "createdById": "0050o00000WkyGGAAZ",
+        "createdByName": "Trần Vỹ Trương",
+        "createdDate": "2019-05-03T06:18:42.000Z",
+        "fileName": "unpackaged/classes/triggerHandle.cls",
+        "fullName": "triggerHandle",
+        "id": "01p0o00000GMOB6AAP",
+        "lastModifiedById": "0050o00000WkyGGAAZ",
+        "lastModifiedByName": "Trần Vỹ Trương",
+        "lastModifiedDate": "2019-05-03T06:18:42.000Z",
+        "manageableState": "unmanaged",
+        "type": "ApexClass",
+        "mmState": "clean"
+    },
+    "TriggerHandle.cls": {
+        "id": "01p0o00000GMOB6AAP",
+        "name": "TriggerHandle",
+        "createdDate": "2019-05-03T06:18:42.000+0000",
+        "createdById": "0050o00000WkyGGAAZ",
+        "namespacePrefix": null,
+        "lastModifiedById": "0050o00000WkyGGAAZ",
+        "lastModifiedDate": "2019-05-03T06:32:28.000+0000",
+        "fullName": "TriggerHandle",
+        "fileName": "unpackaged/classes/TriggerHandle.cls",
+        "createdByName": "Trần Vỹ Trương",
+        "lastModifiedByName": "Trần Vỹ Trương",
+        "manageableState": "unmanaged",
+        "type": "ApexClass",
+        "mmState": "clean"
     }
 }
