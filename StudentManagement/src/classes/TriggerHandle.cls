@@ -45,8 +45,8 @@ public with sharing class TriggerHandle
 	{
 		try
 		{
-			this.executeNOStudentsUpdate(newStudentList);
-			this.executeNOFAPStudentsUpdate(newStudentList);
+			this.executeNOStudentsUpdate(newStudentList , 'insert');
+			this.executeNOFAPStudentsUpdate(newStudentList , 'insert');
 		}
 		catch(Exception ex)
 		{
@@ -57,12 +57,12 @@ public with sharing class TriggerHandle
 	{
 		try
 		{
-			this.executeNOStudentsUpdate(newStudentList);
-			this.executeNOFAPStudentsUpdate(newStudentList);
+			this.executeNOStudentsUpdate(newStudentList, 'delete');
+			this.executeNOFAPStudentsUpdate(newStudentList, 'update');
 
 		}
 		catch(Exception ex)
-		{
+		{	
 			throw new CustomException(ex.getMessage());
 		}
 	}
@@ -71,7 +71,7 @@ public with sharing class TriggerHandle
 		
 	}
 	// update number of students failed and passed in object class__c
-	private void executeNOFAPStudentsUpdate(list<Student__c> studentList)
+	private void executeNOFAPStudentsUpdate(list<Student__c> studentList, String action)
 	{
 		Map<ID, Integer> classIDMapWithPassedStudents = new Map<ID, Integer>();
 		Map<ID, Integer> classIDMapWithFaliedStudents = new Map<ID, Integer>();
@@ -88,7 +88,7 @@ public with sharing class TriggerHandle
 				}
 				else
 				{
-					classIDMapWithPassedStudents.put(s.Class__c, 0);
+					classIDMapWithPassedStudents.put(s.Class__c, 1);
 				}
 			}
 			//execute with failed students
@@ -100,7 +100,7 @@ public with sharing class TriggerHandle
 				}
 				else
 				{
-					classIDMapWithFaliedStudents.put(s.Class__c, 0);
+					classIDMapWithFaliedStudents.put(s.Class__c, 1);
 				}
 			}
 		}
@@ -110,15 +110,33 @@ public with sharing class TriggerHandle
 		{
 			// execute update number failed students
 			if(classIDMapWithFaliedStudents.containsKey(c.id))
-			{
-				c.NumberOfFailedStudents__c = classIDMapWithFaliedStudents.get(c.id);
+			{	
+				//action is insert
+				if(action.equalsIgnoreCase('insert'))
+				{
+					c.NumberOfFailedStudents__c = classIDMapWithFaliedStudents.get(c.id);
+				}
+				//action is delete
+				else
+				{
+					c.NumberOfFailedStudents__c = classIDMapWithFaliedStudents.get(c.id) - 1;
+				}
 				update c ;
 				classIDMapWithFaliedStudents.remove(c.id);
 			}
 			// execute update number of passed students
 			if(classIDMapWithPassedStudents.containsKey(c.id))
 			{
-				c.NumberOfPassedStudents__c = classIDMapWithPassedStudents.get(c.id);
+				// action is insert
+				if(action.equalsIgnoreCase('insert'))
+				{
+					c.NumberOfPassedStudents__c = classIDMapWithPassedStudents.get(c.id);
+				}
+				// action is delete
+				else
+				{
+					c.NumberOfPassedStudents__c = classIDMapWithPassedStudents.get(c.id) - 1;
+				}
 				update c ; 
 				classIDMapWithPassedStudents.remove(c.id);
 			}
@@ -126,7 +144,7 @@ public with sharing class TriggerHandle
 
 	}
 	// update number of students in object class__c
-	private void executeNOStudentsUpdate(List<Student__c> studentList)
+	private void executeNOStudentsUpdate(List<Student__c> studentList, String action)
 	{
 		Map<ID, Integer> classIDMap = new Map<ID, Integer>();
 		// select all classes in the student list
@@ -139,7 +157,7 @@ public with sharing class TriggerHandle
 			}
 			else
 			{
-				classIDMap.put(s.Class__c, 0);
+				classIDMap.put(s.Class__c, 1);
 			}
 		}
 
@@ -149,7 +167,17 @@ public with sharing class TriggerHandle
 		{
 			if(classIDMap.containsKey(c.id))
 			{
-				c.NumberOfStudents__c = classIDMap.get(c.id);
+				System.debug('run at update');
+				// action is insert
+				if(action.equals('insert')){
+					c.NumberOfStudents__c = classIDMap.get(c.id);
+				}
+				//action is delete
+				else
+				{
+					c.NumberOfStudents__c = classIDMap.get(c.id) - 1;
+				}
+				
 				update c ;
 				// revome key with the specified class updated
 				classIDMap.remove(c.id);

@@ -89,16 +89,11 @@ public with sharing class Controller {
 		return result;
 	}
 	public PageReference doInsert(){
-
-		//System.debug('*** birthday: ');
 		PageReference ref = null;
-		//System.debug('*** birthday: ' + this.birthday);
-		//System.debug('*** birthday: ');
 		try{
-			//System.debug('*** birthday: ');
 			Class__c  c = [SELECT id
 					FROM Class__c
-					WHERE Name =: this.userselectSecondpage];
+					WHERE className__c =: this.userselectSecondpage];
 
 			Student__c student = new Student__c();
 			student.Namef__c = this.namef;
@@ -114,7 +109,6 @@ public with sharing class Controller {
 			ref = new PageReference('/apex/AddNewStudent');
 			ref.setRedirect(true);
 		} catch(Exception ex){
-			System.debug('*** birthday: ' + this.birthday);
 			ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, ex.getMessage()));
 		}
 

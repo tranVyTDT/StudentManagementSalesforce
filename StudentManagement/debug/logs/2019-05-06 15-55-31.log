@@ -1,0 +1,137 @@
+45.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: List<Student__c> data = [SELECT id from Student__c];
+Execute Anonymous: for(Student__c s : data)
+Execute Anonymous: {
+Execute Anonymous:     delete s;
+Execute Anonymous: }
+01:55:31.1 (1286534)|USER_INFO|[EXTERNAL]|0050o00000WkyGG|ttvy@keizu.co.jp|(GMT-07:00) Pacific Daylight Time (America/Los_Angeles)|GMT-07:00
+01:55:31.1 (1307843)|EXECUTION_STARTED
+01:55:31.1 (1313318)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+01:55:31.1 (1554561)|VARIABLE_SCOPE_BEGIN|[1]|data|List<Student__c>|true|false
+01:55:31.1 (1692086)|HEAP_ALLOCATE|[72]|Bytes:3
+01:55:31.1 (1733933)|HEAP_ALLOCATE|[77]|Bytes:152
+01:55:31.1 (1748806)|HEAP_ALLOCATE|[342]|Bytes:408
+01:55:31.1 (1762913)|HEAP_ALLOCATE|[355]|Bytes:408
+01:55:31.1 (1775118)|HEAP_ALLOCATE|[467]|Bytes:48
+01:55:31.1 (1802662)|HEAP_ALLOCATE|[139]|Bytes:6
+01:55:31.1 (1826869)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:7
+01:55:31.1 (1932147)|STATEMENT_EXECUTE|[1]
+01:55:31.1 (1934950)|STATEMENT_EXECUTE|[1]
+01:55:31.1 (1939627)|HEAP_ALLOCATE|[1]|Bytes:25
+01:55:31.1 (1962291)|HEAP_ALLOCATE|[1]|Bytes:4
+01:55:31.1 (2028231)|HEAP_ALLOCATE|[50]|Bytes:5
+01:55:31.1 (2054513)|HEAP_ALLOCATE|[56]|Bytes:5
+01:55:31.1 (2064119)|HEAP_ALLOCATE|[64]|Bytes:7
+01:55:31.1 (2306780)|SOQL_EXECUTE_BEGIN|[1]|Aggregations:0|SELECT id FROM Student__c
+01:55:31.1 (5016634)|SOQL_EXECUTE_END|[1]|Rows:1
+01:55:31.1 (5045099)|HEAP_ALLOCATE|[1]|Bytes:8
+01:55:31.1 (5064457)|HEAP_ALLOCATE|[1]|Bytes:29
+01:55:31.1 (5105315)|HEAP_ALLOCATE|[1]|Bytes:8
+01:55:31.1 (5182319)|VARIABLE_ASSIGNMENT|[1]|data|[{"Id":"a0I0o000013dxJjEAI"}]|0x3047af10
+01:55:31.1 (5440905)|HEAP_ALLOCATE|[2]|Bytes:5
+01:55:31.1 (5470570)|HEAP_ALLOCATE|[2]|Bytes:8
+01:55:31.1 (5483628)|VARIABLE_SCOPE_BEGIN|[2]|s|Student__c|true|false
+01:55:31.1 (5506360)|VARIABLE_ASSIGNMENT|[2]|s|{"Id":"a0I0o000013dxJjEAI"}|0x7dd0d7af
+01:55:31.1 (5515591)|STATEMENT_EXECUTE|[3]
+01:55:31.1 (5518932)|STATEMENT_EXECUTE|[4]
+01:55:31.1 (5579693)|HEAP_ALLOCATE|[4]|Bytes:8
+01:55:31.1 (5589946)|HEAP_ALLOCATE|[4]|Bytes:8
+01:55:31.1 (5690267)|DML_BEGIN|[4]|Op:Delete|Type:Student__c|Rows:1
+01:55:31.1 (5732219)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+01:55:31.1 (143233816)|CODE_UNIT_STARTED|[EXTERNAL]|01q0o000000jKrN|triggerStudent on Student trigger event AfterDelete|__sfdc_trigger/triggerStudent
+01:55:31.1 (143307568)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+01:55:31.1 (143468574)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:2
+01:55:31.1 (145450165)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+01:55:31.1 (145467446)|VARIABLE_SCOPE_BEGIN|[1]|this|triggerStudent|true|false
+01:55:31.1 (145512574)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x9889940
+01:55:31.1 (145591727)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+01:55:31.1 (145645785)|VARIABLE_SCOPE_BEGIN|[1]|this|triggerStudent|true|false
+01:55:31.1 (145667469)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x9889940
+01:55:31.1 (145678716)|STATEMENT_EXECUTE|[1]
+01:55:31.1 (145681157)|STATEMENT_EXECUTE|[3]
+01:55:31.1 (145689170)|HEAP_ALLOCATE|[3]|Bytes:15
+01:55:31.1 (145697513)|HEAP_ALLOCATE|[3]|Bytes:19
+01:55:31.1 (145702730)|HEAP_ALLOCATE|[3]|Bytes:11
+01:55:31.1 (145754035)|METHOD_ENTRY|[1]|01p0o00000GMOB6|TriggerHandle.TriggerHandle()
+01:55:31.1 (145762067)|STATEMENT_EXECUTE|[1]
+01:55:31.1 (145765659)|STATEMENT_EXECUTE|[1]
+01:55:31.1 (146318034)|SYSTEM_MODE_ENTER|false
+01:55:31.1 (146336114)|HEAP_ALLOCATE|[3]|Bytes:5
+01:55:31.1 (146343857)|STATEMENT_EXECUTE|[162]
+01:55:31.1 (146350137)|SYSTEM_MODE_EXIT|false
+01:55:31.1 (146362192)|METHOD_EXIT|[1]|TriggerHandle
+01:55:31.1 (146378213)|HEAP_ALLOCATE|[3]|Bytes:4
+01:55:31.1 (146396366)|CONSTRUCTOR_ENTRY|[3]|01p0o00000GMOB6|<init>()|TriggerHandle
+01:55:31.1 (146439958)|VARIABLE_SCOPE_BEGIN|[3]|this|TriggerHandle|true|false
+01:55:31.1 (146463606)|VARIABLE_ASSIGNMENT|[3]|this|{}|0x17fff0b7
+01:55:31.1 (146477059)|SYSTEM_MODE_ENTER|false
+01:55:31.1 (146484059)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+01:55:31.1 (146490596)|STATEMENT_EXECUTE|[1]
+01:55:31.1 (146493777)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+01:55:31.1 (146505279)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:6
+01:55:31.1 (146544787)|STATEMENT_EXECUTE|[4]
+01:55:31.1 (146548484)|SYSTEM_MODE_EXIT|false
+01:55:31.1 (146558675)|CONSTRUCTOR_EXIT|[3]|01p0o00000GMOB6|<init>()|TriggerHandle
+01:55:31.1 (146591492)|VARIABLE_ASSIGNMENT|[3]|this.handle|0x17fff0b7|0x9889940
+01:55:31.1 (146606473)|STATEMENT_EXECUTE|[15]
+01:55:31.1 (146614819)|STATEMENT_EXECUTE|[21]
+01:55:31.1 (146616353)|STATEMENT_EXECUTE|[22]
+01:55:31.1 (146621305)|HEAP_ALLOCATE|[22]|Bytes:8
+01:55:31.1 (146682506)|HEAP_ALLOCATE|[22]|Bytes:41
+01:55:31.1 (146809474)|FATAL_ERROR|System.NullPointerException: Attempt to de-reference a null object
+
+Trigger.triggerStudent: line 22, column 1
+01:55:31.1 (146828089)|FATAL_ERROR|System.NullPointerException: Attempt to de-reference a null object
+
+Trigger.triggerStudent: line 22, column 1
+01:55:31.146 (146878098)|CUMULATIVE_LIMIT_USAGE
+01:55:31.146 (146878098)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+01:55:31.146 (146878098)|CUMULATIVE_LIMIT_USAGE_END
+
+01:55:31.1 (148101358)|CODE_UNIT_FINISHED|triggerStudent on Student trigger event AfterDelete|__sfdc_trigger/triggerStudent
+01:55:31.1 (171730563)|DML_END|[4]
+01:55:31.1 (171850064)|EXCEPTION_THROWN|[4]|System.DmlException: Delete failed. First exception on row 0 with id a0I0o000013dxJjEAI; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, triggerStudent: execution of AfterDelete
+
+caused by: System.NullPointerException: Attempt to de-reference a null object
+
+Trigger.triggerStudent: line 22, column 1: []
+01:55:31.1 (172236302)|HEAP_ALLOCATE|[4]|Bytes:289
+01:55:31.1 (172360099)|FATAL_ERROR|System.DmlException: Delete failed. First exception on row 0 with id a0I0o000013dxJjEAI; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, triggerStudent: execution of AfterDelete
+
+caused by: System.NullPointerException: Attempt to de-reference a null object
+
+Trigger.triggerStudent: line 22, column 1: []
+
+AnonymousBlock: line 4, column 1
+01:55:31.172 (172387231)|CUMULATIVE_LIMIT_USAGE
+01:55:31.172 (172387231)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+01:55:31.172 (172387231)|CUMULATIVE_LIMIT_USAGE_END
+
+01:55:31.1 (172450546)|CODE_UNIT_FINISHED|execute_anonymous_apex
+01:55:31.1 (173396697)|EXECUTION_FINISHED

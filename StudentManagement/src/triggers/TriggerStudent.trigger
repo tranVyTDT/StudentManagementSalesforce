@@ -1,6 +1,6 @@
 trigger triggerStudent on Student__c (before insert 
 									,after insert, after delete, after update) {
-	TriggerStudent handle = new TriggerStudent();
+	TriggerHandle handle = new TriggerHandle();
 	if(Trigger.isBefore)
 	{	
 		//check date input is blank
@@ -13,14 +13,14 @@ trigger triggerStudent on Student__c (before insert
 	}
 	else
 	{
-		if(Trigger.insert)
+		if(Trigger.isInsert)
 		{
 			handle.onAfterInsert(Trigger.new);
 		} 
-		else if(Trigger.delete)
+		else if(Trigger.isDelete)
 		{
-			handle.onAfterDelete(Trigger.new);
-		} else if(Trigger.update)
+			handle.onAfterDelete(Trigger.old);
+		} else if(Trigger.isUpdate)
 		{
 			handle.onAfterUpdate(Trigger.new);
 		}
