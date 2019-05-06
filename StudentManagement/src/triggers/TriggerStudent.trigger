@@ -22,7 +22,7 @@ trigger triggerStudent on Student__c (before insert
 			handle.onAfterDelete(Trigger.old);
 		} else if(Trigger.isUpdate)
 		{
-			handle.onAfterUpdate(Trigger.new);
+			handle.onAfterUpdate(Trigger.new, Trigger.old);
 		}
 	}
 }

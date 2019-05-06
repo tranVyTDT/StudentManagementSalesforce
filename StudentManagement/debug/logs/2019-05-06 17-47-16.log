@@ -1,0 +1,77 @@
+45.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: Student__c s = [SELECT id,Score1__c,Score2__c,Score3__c from Student__c where id = 'a0I0o000013dxQTEAY'];
+Execute Anonymous: s.Score1__c = 0;
+Execute Anonymous: s.Score2__c = 1;
+Execute Anonymous: s.Score3__c = 3;
+Execute Anonymous: update s;
+03:47:16.1 (1333417)|USER_INFO|[EXTERNAL]|0050o00000WkyGG|ttvy@keizu.co.jp|(GMT-07:00) Pacific Daylight Time (America/Los_Angeles)|GMT-07:00
+03:47:16.1 (1358700)|EXECUTION_STARTED
+03:47:16.1 (1364190)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+03:47:16.1 (1551405)|VARIABLE_SCOPE_BEGIN|[1]|s|Student__c|true|false
+03:47:16.1 (1688466)|HEAP_ALLOCATE|[72]|Bytes:3
+03:47:16.1 (1724781)|HEAP_ALLOCATE|[77]|Bytes:152
+03:47:16.1 (1738009)|HEAP_ALLOCATE|[342]|Bytes:408
+03:47:16.1 (1749920)|HEAP_ALLOCATE|[355]|Bytes:408
+03:47:16.1 (1760501)|HEAP_ALLOCATE|[467]|Bytes:48
+03:47:16.1 (1784835)|HEAP_ALLOCATE|[139]|Bytes:6
+03:47:16.1 (1812701)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:9
+03:47:16.1 (1927560)|STATEMENT_EXECUTE|[1]
+03:47:16.1 (1930464)|STATEMENT_EXECUTE|[1]
+03:47:16.1 (1936321)|HEAP_ALLOCATE|[1]|Bytes:90
+03:47:16.1 (1955189)|HEAP_ALLOCATE|[1]|Bytes:4
+03:47:16.1 (1997588)|HEAP_ALLOCATE|[50]|Bytes:5
+03:47:16.1 (2019471)|HEAP_ALLOCATE|[56]|Bytes:5
+03:47:16.1 (2027802)|HEAP_ALLOCATE|[64]|Bytes:7
+03:47:16.1 (2410257)|SOQL_EXECUTE_BEGIN|[1]|Aggregations:0|SELECT id, Score1__c, Score2__c, Score3__c FROM Student__c WHERE id = 'a0I0o000013dxQTEAY'
+03:47:16.1 (4438538)|SOQL_EXECUTE_END|[1]|Rows:1
+03:47:16.1 (4464822)|HEAP_ALLOCATE|[1]|Bytes:8
+03:47:16.1 (4488198)|HEAP_ALLOCATE|[1]|Bytes:176
+03:47:16.1 (4587462)|HEAP_ALLOCATE|[1]|Bytes:8
+03:47:16.1 (4601517)|HEAP_ALLOCATE|[1]|Bytes:36
+03:47:16.1 (4649238)|HEAP_ALLOCATE|[1]|Bytes:20
+03:47:16.1 (4706849)|VARIABLE_ASSIGNMENT|[1]|s|{"Id":"a0I0o000013dxQTEAY","Score1__c":7.00,"Score2__c":9.00,"Score3__c":9.00}|0x376d714
+03:47:16.1 (4714554)|STATEMENT_EXECUTE|[2]
+03:47:16.1 (4750836)|HEAP_ALLOCATE|[2]|Bytes:28
+03:47:16.1 (4756115)|HEAP_ALLOCATE|[2]|Bytes:28
+03:47:16.1 (4842803)|VARIABLE_ASSIGNMENT|[2]|this.Score1__c|0|0x376d714
+03:47:16.1 (4850253)|STATEMENT_EXECUTE|[3]
+03:47:16.1 (4860109)|HEAP_ALLOCATE|[3]|Bytes:28
+03:47:16.1 (4865144)|HEAP_ALLOCATE|[3]|Bytes:28
+03:47:16.1 (4903499)|VARIABLE_ASSIGNMENT|[3]|this.Score2__c|1|0x376d714
+03:47:16.1 (4910146)|STATEMENT_EXECUTE|[4]
+03:47:16.1 (4917192)|HEAP_ALLOCATE|[4]|Bytes:28
+03:47:16.1 (4921649)|HEAP_ALLOCATE|[4]|Bytes:28
+03:47:16.1 (4954363)|VARIABLE_ASSIGNMENT|[4]|this.Score3__c|3|0x376d714
+03:47:16.1 (4969580)|STATEMENT_EXECUTE|[5]
+03:47:16.1 (5003222)|HEAP_ALLOCATE|[5]|Bytes:8
+03:47:16.1 (5030322)|DML_BEGIN|[5]|Op:Update|Type:Student__c|Rows:1
+03:47:16.1 (5062674)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+03:47:16.1 (98314876)|DML_END|[5]
+03:47:16.1 (98496257)|EXCEPTION_THROWN|[5]|System.DmlException: Update failed. First exception on row 0 with id a0I0o000013dxQTEAY; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, triggerStudent: execution of AfterUpdate
+
+caused by: line 25, column 11: Method does not exist or incorrect signature: void onAfterUpdate(List<Student__c>) from the type TriggerHandle: []
+03:47:16.1 (98919305)|HEAP_ALLOCATE|[5]|Bytes:310
+03:47:16.1 (99150934)|FATAL_ERROR|System.DmlException: Update failed. First exception on row 0 with id a0I0o000013dxQTEAY; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, triggerStudent: execution of AfterUpdate
+
+caused by: line 25, column 11: Method does not exist or incorrect signature: void onAfterUpdate(List<Student__c>) from the type TriggerHandle: []
+
+AnonymousBlock: line 5, column 1
+03:47:16.99 (99185750)|CUMULATIVE_LIMIT_USAGE
+03:47:16.99 (99185750)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+03:47:16.99 (99185750)|CUMULATIVE_LIMIT_USAGE_END
+
+03:47:16.1 (99247395)|CODE_UNIT_FINISHED|execute_anonymous_apex
+03:47:16.1 (100236792)|EXECUTION_FINISHED

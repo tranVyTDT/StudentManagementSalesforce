@@ -53,12 +53,12 @@ public with sharing class TriggerHandle
 			throw new CustomException(ex.getMessage());
 		}
 	}
-	public void onAfterDelete(List<Student__c> newStudentList)
+	public void onAfterDelete(List<Student__c> oldStudentList)
 	{
 		try
 		{
-			this.executeNOStudentsUpdate(newStudentList, 'delete');
-			this.executeNOFAPStudentsUpdate(newStudentList, 'update');
+			this.executeNOStudentsUpdate(oldStudentList, 'delete');
+			this.executeNOFAPStudentsUpdate(oldStudentList, 'delete');
 
 		}
 		catch(Exception ex)
@@ -66,9 +66,51 @@ public with sharing class TriggerHandle
 			throw new CustomException(ex.getMessage());
 		}
 	}
-	public void onAfterUpdate(List<Student__c> newStudentList)
+	public void onAfterUpdate(List<Student__c> newStudentList, List<Student__c> oldStudentList )
 	{
-		
+		List<Student__c> differentList = new List<Student__c>();
+		// find the student change classes to update new and old classes
+		for(Student__c newS : newStudentList)
+		{
+			for(Student__c oldS : oldStudentList)
+			{
+				System.debug('run here before');
+				if(!newS.State__c.equalsIgnoreCase(oldS.State__c))
+				{
+					System.debug('run here after');
+					differentList.add(newS);
+				}
+			}
+
+		}
+		for(Student__c s : differentList)
+		{
+			System.debug('run here');
+			if(s.State__c.equalsIgnoreCase('passed'))
+			{
+				System.debug('run here pass');
+				Class__c c = [SELECT id 
+									, NumberOfFailedStudents__c
+									, NumberOfPassedStudents__c
+							FROM Class__c 
+							WHERE id =: s.Class__c];
+				c.NumberOfPassedStudents__c += 1;
+				c.NumberOfFailedStudents__c -= 1;
+				update c;
+			}
+			else
+			{
+				System.debug('run here falied');
+				Class__c c = [SELECT id 
+									, NumberOfFailedStudents__c
+									, NumberOfPassedStudents__c
+							FROM Class__c 
+							WHERE id =: s.Class__c];
+				c.NumberOfPassedStudents__c -= 1;
+				c.NumberOfFailedStudents__c += 1;
+				update c;
+			}
+		}
 	}
 	// update number of students failed and passed in object class__c
 	private void executeNOFAPStudentsUpdate(list<Student__c> studentList, String action)

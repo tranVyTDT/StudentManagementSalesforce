@@ -1,0 +1,56 @@
+45.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: Student__c s = [SELECT Class__c from Student__c where id = 'a0I0o000013dxQTEAY'];
+Execute Anonymous: s.Class__c = Id.valueOf('a0H0o00000fJQOwEAO');
+Execute Anonymous: update s;
+03:12:28.1 (1254195)|USER_INFO|[EXTERNAL]|0050o00000WkyGG|ttvy@keizu.co.jp|(GMT-07:00) Pacific Daylight Time (America/Los_Angeles)|GMT-07:00
+03:12:28.1 (1274222)|EXECUTION_STARTED
+03:12:28.1 (1278767)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+03:12:28.1 (1427823)|VARIABLE_SCOPE_BEGIN|[1]|s|Student__c|true|false
+03:12:28.1 (1541087)|HEAP_ALLOCATE|[72]|Bytes:3
+03:12:28.1 (1573381)|HEAP_ALLOCATE|[77]|Bytes:152
+03:12:28.1 (1585772)|HEAP_ALLOCATE|[342]|Bytes:408
+03:12:28.1 (1598581)|HEAP_ALLOCATE|[355]|Bytes:408
+03:12:28.1 (1609387)|HEAP_ALLOCATE|[467]|Bytes:48
+03:12:28.1 (1632832)|HEAP_ALLOCATE|[139]|Bytes:6
+03:12:28.1 (1658962)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+03:12:28.1 (1767742)|STATEMENT_EXECUTE|[1]
+03:12:28.1 (1770382)|STATEMENT_EXECUTE|[1]
+03:12:28.1 (1773355)|HEAP_ALLOCATE|[1]|Bytes:63
+03:12:28.1 (1790197)|HEAP_ALLOCATE|[1]|Bytes:4
+03:12:28.1 (1825215)|HEAP_ALLOCATE|[50]|Bytes:5
+03:12:28.1 (1844923)|HEAP_ALLOCATE|[56]|Bytes:5
+03:12:28.1 (1852559)|HEAP_ALLOCATE|[64]|Bytes:7
+03:12:28.1 (2133532)|SOQL_EXECUTE_BEGIN|[1]|Aggregations:0|SELECT Class__c FROM Student__c WHERE id = 'a0I0o000013dxQTEAY'
+03:12:28.1 (4498063)|SOQL_EXECUTE_END|[1]|Rows:1
+03:12:28.1 (4522349)|HEAP_ALLOCATE|[1]|Bytes:8
+03:12:28.1 (4535818)|HEAP_ALLOCATE|[1]|Bytes:59
+03:12:28.1 (4626593)|HEAP_ALLOCATE|[1]|Bytes:8
+03:12:28.1 (4641210)|HEAP_ALLOCATE|[1]|Bytes:36
+03:12:28.1 (4696884)|HEAP_ALLOCATE|[1]|Bytes:12
+03:12:28.1 (4734017)|VARIABLE_ASSIGNMENT|[1]|s|{"Class__c":"a0H0o00000fJQOvEAO","Id":"a0I0o000013dxQTEAY"}|0x668d7298
+03:12:28.1 (4742409)|STATEMENT_EXECUTE|[2]
+03:12:28.1 (4745611)|HEAP_ALLOCATE|[2]|Bytes:18
+03:12:28.1 (4792910)|HEAP_ALLOCATE|[2]|Bytes:4
+03:12:28.1 (5468173)|HEAP_ALLOCATE|[2]|Bytes:47
+03:12:28.1 (5607527)|FATAL_ERROR|System.SObjectException: Field is not writeable: Student__c.Class__c
+
+AnonymousBlock: line 2, column 1
+03:12:28.5 (5666197)|CUMULATIVE_LIMIT_USAGE
+03:12:28.5 (5666197)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+03:12:28.5 (5666197)|CUMULATIVE_LIMIT_USAGE_END
+
+03:12:28.1 (5709689)|CODE_UNIT_FINISHED|execute_anonymous_apex
+03:12:28.1 (6531377)|EXECUTION_FINISHED
