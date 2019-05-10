@@ -7,13 +7,18 @@ public with sharing class Controller {
 	public String sumstudents {get;set;}
 	public String idStudent {get;set;}
 	public Boolean isColumnChecked {get; set;}
-	public String namef {get; set;}
+	public Student__c student {get; set;}
+	/*public String namef {get; set;}
 	public String namel {get; set;}
 	public Boolean gender {get; set;}
 	public Date birthday {get; set;}
 	public Decimal score1 {get; set;}
 	public Decimal score2 {get; set;}
-	public Decimal score3 {get; set;}
+	public Decimal score3 {get; set;}*/
+	public Controller(){
+		this.student = new Student__c();
+		this.objKeySearch = new KeySearchDTO();
+	}
 
 	public class KeySearchDTO{
 		public Boolean increasing {get; set;}
@@ -91,21 +96,12 @@ public with sharing class Controller {
 	public PageReference doInsert(){
 		PageReference ref = null;
 		try{
+
 			Class__c  c = [SELECT id
 					FROM Class__c
 					WHERE className__c =: this.userselectSecondpage];
-
-			Student__c student = new Student__c();
-			student.Namef__c = this.namef;
-			student.Namel__c = this.namel;
-			student.Gender__c = this.gender;
-			student.Birthday__c = Date.valueOf(this.birthday);
-			student.Score1__c = this.score1;
-			student.Score2__c = this.score2;
-			student.Score3__c = this.score3;
-			student.Name = this.namef + this.namel;
-			student.Class__c = c.id;
-			insert student;
+			this.student.Class__c = c.id;
+			insert this.student;
 			ref = new PageReference('/apex/AddNewStudent');
 			ref.setRedirect(true);
 		} catch(Exception ex){
@@ -135,7 +131,6 @@ public with sharing class Controller {
 		return null;
 	}
 	public void actionSearch() {
-		this.objKeySearch = new KeySearchDTO();
 		this.objKeySearch.search(this.objKeySearch);
 		System.debug(this.objKeySearch.studentName);
 		try {

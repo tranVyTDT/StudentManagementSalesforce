@@ -10,46 +10,53 @@ public with sharing class TriggerHandle
 		{
 			for(Student__c s : newStudentList)
 			{
-				if(s.Score1__c == null)
+				if(s.Score1__c == -1)
 				{
-					throw new CustomException('please enter chemistry score');
+					s.Score1__c.addError('please enter chemistry score');
 				}
-				if(s.Score2__c == null)
+				else if(s.Score2__c == -1)
 				{
-					throw new CustomException('please enter physical score');
+					s.Score2__c.addError('please enter physical score');
 				}
-				if(s.Score3__c == null)
+				else if(s.Score3__c == -1)
 				{
-					throw new CustomException('please enter math score');
+					s.Score3__c.addError('please enter math score');
 				}
-				if(s.BirthDay__c == null)
+				else if(s.BirthDay__c == null)
 				{
-					throw new CustomException('please choose a birthday');
+					s.BirthDay__c.addError('please choose a birthday');
 				}
 				else
 				{
+
 					Integer age = Date.today().daysBetween(s.BirthDay__c) / 365;
-					if(age > 18 && age < 6)
+					if(age < -18 || age > -6)
 					{
-						throw new CustomException('invalid birthday');
+						s.BirthDay__c.addError('invalid birthday');
 					}
+
 				}
 			}
 		}
 		catch(Exception ex )
 		{
-			throw new CustomException(ex.getMessage());
-		}
+			//throw new CustomException(ex.getMessage());
+		}	
 	}
 	public void onAfterInsert(List<Student__c> newStudentList)
 	{
+		Savepoint sp;
 		try
 		{
 			this.executeNOStudentsUpdate(newStudentList , 'insert');
 			this.executeNOFAPStudentsUpdate(newStudentList , 'insert');
+			sp = Database.setSavepoint();
 		}
 		catch(Exception ex)
 		{
+			if (sp != null) {
+				Database.rollback(sp);
+			}
 			throw new CustomException(ex.getMessage());
 		}
 	}
