@@ -241,7 +241,7 @@
 			"file": "src/classes/TriggerHandle.cls",
 			"settings":
 			{
-				"buffer_size": 6065,
+				"buffer_size": 5890,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -323,7 +323,7 @@
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -425,15 +425,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6065,
+						"buffer_size": 5890,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1884,
-								1884
+								0,
+								0
 							]
 						],
 						"settings":
@@ -467,7 +467,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax"
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

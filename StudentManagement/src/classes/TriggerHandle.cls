@@ -68,47 +68,38 @@ public with sharing class TriggerHandle
 	}
 	public void onAfterUpdate(List<Student__c> newStudentList, List<Student__c> oldStudentList )
 	{
-		List<Student__c> differentList = new List<Student__c>();
+		Map<Id,String> differentStudenMap = new Map<Id,String>();
 		// find the student change classes to update new and old classes
 		for(Student__c newS : newStudentList)
 		{
 			for(Student__c oldS : oldStudentList)
 			{
-				System.debug('run here before');
 				if(!newS.State__c.equalsIgnoreCase(oldS.State__c))
 				{
-					System.debug('run here after');
-					differentList.add(newS);
+					differentStudenMap.put(newS.Class__c , newS.State__c);
 				}
 			}
 
 		}
-		for(Student__c s : differentList)
+		List<Class__c> classList = [SELECT id 
+									, NumberOfFailedStudents__c
+									, NumberOfPassedStudents__c
+							FROM Class__c];
+		for(Class__c c : classList)
 		{
-			System.debug('run here');
-			if(s.State__c.equalsIgnoreCase('passed'))
-			{
-				System.debug('run here pass');
-				Class__c c = [SELECT id 
-									, NumberOfFailedStudents__c
-									, NumberOfPassedStudents__c
-							FROM Class__c 
-							WHERE id =: s.Class__c];
-				c.NumberOfPassedStudents__c += 1;
-				c.NumberOfFailedStudents__c -= 1;
-				update c;
-			}
-			else
-			{
-				System.debug('run here falied');
-				Class__c c = [SELECT id 
-									, NumberOfFailedStudents__c
-									, NumberOfPassedStudents__c
-							FROM Class__c 
-							WHERE id =: s.Class__c];
-				c.NumberOfPassedStudents__c -= 1;
-				c.NumberOfFailedStudents__c += 1;
-				update c;
+			if(differentStudenMap.containsKey(c.id)){
+				if(differentStudenMap.get(c.id).equalsIgnoreCase('passed'))
+				{
+					c.NumberOfPassedStudents__c += 1;
+					c.NumberOfFailedStudents__c -= 1;
+					update c;
+				}
+				else
+				{
+					c.NumberOfPassedStudents__c -= 1;
+					c.NumberOfFailedStudents__c += 1;
+					update c;
+				}
 			}
 		}
 	}
