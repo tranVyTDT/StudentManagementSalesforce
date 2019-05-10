@@ -8,13 +8,6 @@ public with sharing class Controller {
 	public String idStudent {get;set;}
 	public Boolean isColumnChecked {get; set;}
 	public Student__c student {get; set;}
-	/*public String namef {get; set;}
-	public String namel {get; set;}
-	public Boolean gender {get; set;}
-	public Date birthday {get; set;}
-	public Decimal score1 {get; set;}
-	public Decimal score2 {get; set;}
-	public Decimal score3 {get; set;}*/
 	public Controller(){
 		this.student = new Student__c();
 		this.objKeySearch = new KeySearchDTO();
@@ -22,7 +15,7 @@ public with sharing class Controller {
 
 	public class KeySearchDTO{
 		public Boolean increasing {get; set;}
-		public String studentName {get; set;}
+		public Student__c studentName {get; set;}
 		public String className {get; set;}
 		public Student__c objStudentTo {get; set;}
 		public Student__c objStudentFrom {get; set;}
@@ -31,11 +24,8 @@ public with sharing class Controller {
 			this.objStudentFrom = new Student__c();
 			this.objStudentTo = new Student__c();
 			this.increasing = false;
-			this.studentName = '';
+			this.studentName = new Student__c();
 			this.className = '';
-		}
-		public void search(KeySearchDTO k){
-			this.studentName = k.studentName;
 		}
 	}
 
@@ -47,11 +37,13 @@ public with sharing class Controller {
 			this.isSelected = false;
 		}
 	}
+	
 	public PageReference dosubmit(){
 	    PageReference pr = new PageReference('/apex/AddNewStudent');
 	    pr.setRedirect(true);
 	    return pr;
 	}
+
 	public PageReference goBack(){
 		PageReference pg = new PageReference('/apex/MainPage');
 	    pg.setRedirect(true);
@@ -67,6 +59,7 @@ public with sharing class Controller {
 
 		return options;
 	}
+
 	private List<Output> getStudent(){
 		List<Student__c> studentGetList = [SELECT Namef__c
 												,Namel__c
@@ -79,9 +72,9 @@ public with sharing class Controller {
 												,State__c
 												,StudentId__c
 										FROM Student__c
-										WHERE Name LIKE: this.objKeySearch.studentName
+										WHERE Name LIKE: this.objKeySearch.studentName.Name
 										OR Class__r.Name LIKE: this.objKeySearch.className
-										OR (Student__c.Birthday__c >	 :this.objKeySearch.objStudentFrom.Birthday__c
+										OR (Student__c.Birthday__c > :this.objKeySearch.objStudentFrom.Birthday__c
 										AND Student__c.Birthday__c < :this.objKeySearch.objStudentFrom.Birthday__c) ];
 		List<Output> result = new List<Output>();
 		for(Student__c s : studentGetList){
@@ -90,9 +83,9 @@ public with sharing class Controller {
 		if(this.objKeySearch.increasing){
 			result.sort();
 		}
-		System.debug('*** result: ' + result.size());
 		return result;
 	}
+
 	public PageReference doInsert(){
 		PageReference ref = null;
 		try{
@@ -110,8 +103,11 @@ public with sharing class Controller {
 
 		return ref;
 	}
+
 	public PageReference actionDeleteStudentBeSelected(){
+		System.debug('delete');
 		for(Output s : this.OutputList){
+			System.debug(s.isSelected + ' result selected');
 			if(s.isSelected == true){
 				delete s.student;
 			}
@@ -119,6 +115,7 @@ public with sharing class Controller {
 		this.actionSearch();
 		return null;
 	}
+
 	public PageReference actionDeleteStudent(){
 		String idStudentGet = ApexPages.CurrentPage().getParameters().get('idStudent');
 		for(Output s : this.OutputList){
@@ -130,15 +127,13 @@ public with sharing class Controller {
 
 		return null;
 	}
+
 	public void actionSearch() {
-		this.objKeySearch.search(this.objKeySearch);
-		System.debug(this.objKeySearch.studentName);
 		try {
-			if(String.isBlank(this.objKeySearch.studentName)){
+			if(String.isBlank(this.objKeySearch.studentName.Name)){
 				ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR,'name can not be empty'));
 				return;
 			}
-			System.System.debug('*** OutputList: ' + this.OutputList.size());
 			this.OutputList = this.getStudent();
 			sumstudents =  'Total Students : '+ this.OutputList.size();
 		} catch(Exception ex) {

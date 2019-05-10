@@ -207,15 +207,14 @@ public with sharing class TriggerHandle
 		{
 			if(classIDMap.containsKey(c.id))
 			{
-				System.debug('run at update');
 				// action is insert
 				if(action.equals('insert')){
-					c.NumberOfStudents__c = classIDMap.get(c.id);
+					c.NumberOfStudents__c = classIDMap.get(c.id) + c.NumberOfStudents__c;
 				}
 				//action is delete
 				else
 				{
-					c.NumberOfStudents__c = classIDMap.get(c.id) - 1;
+					c.NumberOfStudents__c = c.NumberOfStudents__c - classIDMap.get(c.id);
 				}
 				
 				update c ;

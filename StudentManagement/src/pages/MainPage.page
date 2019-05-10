@@ -4,7 +4,7 @@
 		display: none;
 	}
 	.button{
-		width:31%;
+		width:200px;
 		margin:1%;
 		padding:0px;
 		border:1px solid #000000;
@@ -12,13 +12,12 @@
 	}
 </style>
 		<!-- get input form user-->
-	<div>
 		<apex:form >
 			<table>
 				<tr>
 						<td >Name : </td>
 						<td >
-							<apex:inputText value="{!objKeySearch.studentName}" style="width: 200px;height: 17px;"/>
+							<apex:inputField value="{!objKeySearch.studentName.Name}" style="width: 200px;height: 17px;"/>
 						</td>
 						<td>
 							<apex:inputCheckbox value="{!objkeySearch.increasing}"  />
@@ -47,20 +46,15 @@
 				</tr>
 				<tr>
 					<td colspan="4">
-						<apex:commandButton value="Search" action="{!actionSearch}"  styleClass="button"/>
-						<apex:commandButton value="Add" action="{!doSubmit}" oncomplete="gotoAddNewStudentPage();" styleClass="button" />
-						<apex:commandButton value="Delete" action="{!actionDeleteStudentBeSelected}" styleClass="button" 
-						onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }"/>
 					</td>
 				</tr>
 			</table>
-		</apex:form>
-
-	</div>
 	<!-- showing the table-->
-	<div>
-		<apex:form >
 			<apex:pageMessages id="message"/>
+			<apex:commandButton value="Search" action="{!actionSearch}"  styleClass="button"/>
+			<apex:commandButton value="Add" action="{!doSubmit}" oncomplete="gotoAddNewStudentPage();" styleClass="button" />
+			<apex:commandButton value="Delete" action="{!actionDeleteStudentBeSelected}" styleClass="button" 
+						onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }"/>
 			<apex:outputPanel id="pinserted">
 				<apex:pageBlock >
 			      	<apex:pageBlockTable value="{!OutputList}" var="s">
@@ -98,9 +92,21 @@
 				   			<apex:outputField value="{!s.student.State__c}"/>
 				   		</apex:column>
 				   		<apex:column headerValue="{!sumstudents}">
-				   				<a href="">update</a>
+				   				<apex:commandButton 
+				   				value="Update" 
+				   				action="{!actionDeleteStudent}"  
+				   				reRender="pinserted"
+				   				style="background: #ffffff;border: 0px ;text-decoration: underline"
+				   				>
+				   				</apex:commandButton>
 				   				<span>|</span>
-				   				<apex:commandButton immediate="true" value="Delete" action="{!actionDeleteStudent}"  reRender="pinserted">
+				   				<apex:commandButton 
+				   				value="Delete" 
+				   				action="{!actionDeleteStudent}"  
+				   				reRender="pinserted"
+				   				style="background: #ffffff;border: 0px ;text-decoration: underline"
+				   				onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }"
+				   				>
 				   					<apex:param value="{!s.student.StudentId__c}" assignTo="{!idStudent}"  name="idStudent"/>
 				   				 </apex:commandButton>
 				   		</apex:column>
@@ -108,11 +114,9 @@
 		   		</apex:pageBlock>
 	   		</apex:outputPanel>
    		</apex:form>
-	</div>
 <script>
 function gotoAddNewStudentPage() {
     window.location = '/apex/AddNewStudent';
 }
 </script>
-
 </apex:page>
