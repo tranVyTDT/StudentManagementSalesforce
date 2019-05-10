@@ -37,7 +37,7 @@ public with sharing class Controller {
 			this.isSelected = false;
 		}
 	}
-	
+
 	public PageReference dosubmit(){
 	    PageReference pr = new PageReference('/apex/AddNewStudent');
 	    pr.setRedirect(true);
