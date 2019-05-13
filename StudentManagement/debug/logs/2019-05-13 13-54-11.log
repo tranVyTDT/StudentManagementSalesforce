@@ -1,0 +1,47 @@
+45.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: String a = 'ab';
+Execute Anonymous: String b = 'ba';
+Execute Anonymous: System.debug(a.compareTo(b));
+23:54:10.1 (1363975)|USER_INFO|[EXTERNAL]|0050o00000WkyGG|ttvy@keizu.co.jp|(GMT-07:00) Pacific Daylight Time (America/Los_Angeles)|GMT-07:00
+23:54:10.1 (1383050)|EXECUTION_STARTED
+23:54:10.1 (1387002)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+23:54:10.1 (1496803)|VARIABLE_SCOPE_BEGIN|[1]|a|String|false|false
+23:54:10.1 (1507922)|VARIABLE_SCOPE_BEGIN|[2]|b|String|false|false
+23:54:10.1 (1597149)|HEAP_ALLOCATE|[72]|Bytes:3
+23:54:10.1 (1643395)|HEAP_ALLOCATE|[77]|Bytes:152
+23:54:10.1 (1657156)|HEAP_ALLOCATE|[342]|Bytes:408
+23:54:10.1 (1669644)|HEAP_ALLOCATE|[355]|Bytes:408
+23:54:10.1 (1689152)|HEAP_ALLOCATE|[467]|Bytes:48
+23:54:10.1 (1713299)|HEAP_ALLOCATE|[139]|Bytes:6
+23:54:10.1 (1740618)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+23:54:10.1 (1843288)|STATEMENT_EXECUTE|[1]
+23:54:10.1 (1846043)|STATEMENT_EXECUTE|[1]
+23:54:10.1 (1849276)|HEAP_ALLOCATE|[1]|Bytes:2
+23:54:10.1 (1882046)|VARIABLE_ASSIGNMENT|[1]|a|"ab"
+23:54:10.1 (1888256)|STATEMENT_EXECUTE|[2]
+23:54:10.1 (1890618)|HEAP_ALLOCATE|[2]|Bytes:2
+23:54:10.1 (1899251)|VARIABLE_ASSIGNMENT|[2]|b|"ba"
+23:54:10.1 (1903252)|STATEMENT_EXECUTE|[3]
+23:54:10.1 (1981527)|HEAP_ALLOCATE|[50]|Bytes:5
+23:54:10.1 (2002601)|HEAP_ALLOCATE|[56]|Bytes:5
+23:54:10.1 (2010966)|HEAP_ALLOCATE|[64]|Bytes:7
+23:54:10.1 (2040111)|USER_DEBUG|[3]|DEBUG|-1
+23:54:10.2 (2078718)|CUMULATIVE_LIMIT_USAGE
+23:54:10.2 (2078718)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:54:10.2 (2078718)|CUMULATIVE_LIMIT_USAGE_END
+
+23:54:10.1 (2119272)|CODE_UNIT_FINISHED|execute_anonymous_apex
+23:54:10.1 (3085514)|EXECUTION_FINISHED

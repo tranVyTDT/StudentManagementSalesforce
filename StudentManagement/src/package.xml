@@ -12,6 +12,7 @@
 	<types>
 		<members>AddNewStudent</members>
 		<members>MainPage</members>
+		<members>StudentDetails</members>
 		<name>ApexPage</name>
 	</types>
 	<types>

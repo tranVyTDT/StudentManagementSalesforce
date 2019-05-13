@@ -1,0 +1,44 @@
+<apex:page showHeader="true" sidebar="true" controller="Controller"  docType="html-5.0">
+<apex:form>
+<table>
+	<tr>
+		<td>Last Name</td> 
+		<td colspan="2">
+			<apex:outputText value="{!lastNameDetails}" />
+		</td>
+	</tr>
+	<tr>
+		<td>First Name</td> <td colspan="2"></td>
+	</tr>
+	<tr>
+		<td>Gender</td> <td colspan="2"></td>
+	</tr>
+	<tr>
+		<td>Birthday</td> <td colspan="2"></td>
+	</tr>
+	<tr>
+		<td>Score 1</td> <td colspan="2"></td>
+	</tr>
+	<tr>
+		<td>Score 2</td> <td colspan="2"></td>
+	</tr>
+	<tr>
+		<td>Score 3</td> <td colspan="2"></td>
+	</tr>
+	<tr>
+		<td>Average Score</td> <td colspan="2"></td>
+	</tr>
+	<tr>
+		<td>State</td> <td colspan="2"></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<apex:commandButton value="Update"/>
+		</td> 
+		<td > 
+		<apex:commandButton value="Delete"/>
+		</td>
+	</tr>
+</table>
+</apex:form>
+</apex:page>

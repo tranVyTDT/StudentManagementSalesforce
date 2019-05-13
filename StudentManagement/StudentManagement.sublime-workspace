@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"com",
+				"apex:commandButton"
+			],
+			[
+				"ap",
+				"apex:axis"
+			],
+			[
+				"N",
+				"Name"
+			],
+			[
 				"nu",
 				"NumberOfFailedStudents__c"
 			],
@@ -220,37 +232,28 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/Dev002/Downloads/PRO_ProjectTrg.trigger",
+			"file": "src/pages/MainPage.page",
 			"settings":
 			{
-				"buffer_size": 1053,
+				"buffer_size": 4272,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Dev002/Downloads/PRO_ProjectTrgHndl.cls",
-			"settings":
-			{
-				"buffer_size": 9978,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "src/classes/TriggerHandle.cls",
 			"settings":
 			{
-				"buffer_size": 5890,
+				"buffer_size": 5925,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/triggers/triggerStudent.trigger",
+			"file": "src/classes/Controller.cls",
 			"settings":
 			{
-				"buffer_size": 589,
+				"buffer_size": 4227,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -305,16 +308,18 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/TriggerHandle.cls",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/AddNewStudent.page",
+		"/C/Users/Dev002/Downloads/PRO_ProjectTrg.trigger",
+		"/C/Users/Dev002/Downloads/PRO_ProjectTrgHndl.cls",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/triggers/triggerStudent.trigger",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/Controller.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/MainPage.page",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/AddNewStudent.page",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/TriggerHandle.cls-meta.xml",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/triggers/triggerStudent.trigger-meta.xml",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/package.xml",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/triggers/triggerStudent.trigger",
 		"/C/Users/Dev002/Desktop/TriggerStudent.trigger",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/triggers/TriggerStudent.trigger",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/TriggerHandle.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/controller.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/Controller.cls-meta.xml",
 		"/C/Users/Dev002/Documents/StudentManagement/src/classes/CommandButtonParamController.cls-meta.xml",
@@ -337,6 +342,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"debug",
 			"message",
 			"studentList",
 			"Output",
@@ -363,77 +369,48 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/Dev002/Downloads/PRO_ProjectTrg.trigger",
+					"file": "src/pages/MainPage.page",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1053,
+						"buffer_size": 4272,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1036,
-								1042
+								4241,
+								4241
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"syntax": "Packages/MavensMate/sublime/lang/Visualforce.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/Dev002/Downloads/PRO_ProjectTrgHndl.cls",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9978,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2763,
-								2763
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1337.0,
+						"translation.y": 1404.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "src/classes/TriggerHandle.cls",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5890,
+						"buffer_size": 5925,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								5751,
+								5751
 							]
 						],
 						"settings":
@@ -442,39 +419,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1185.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/triggers/triggerStudent.trigger",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 589,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								457,
-								457
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3420.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/classes/Controller.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2565,
+								2565
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1188.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -513,7 +490,7 @@
 	"menu_visible": true,
 	"output.MavensMate-OutputPanel":
 	{
-		"height": 192.0
+		"height": 112.0
 	},
 	"output.find_results":
 	{

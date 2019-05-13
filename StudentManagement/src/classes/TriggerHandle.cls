@@ -154,12 +154,12 @@ public with sharing class TriggerHandle
 				//action is insert
 				if(action.equalsIgnoreCase('insert'))
 				{
-					c.NumberOfFailedStudents__c = classIDMapWithFaliedStudents.get(c.id);
+					c.NumberOfFailedStudents__c += classIDMapWithFaliedStudents.get(c.id);
 				}
 				//action is delete
 				else
 				{
-					c.NumberOfFailedStudents__c = classIDMapWithFaliedStudents.get(c.id) - 1;
+					c.NumberOfFailedStudents__c -= classIDMapWithFaliedStudents.get(c.id);
 				}
 				update c ;
 				classIDMapWithFaliedStudents.remove(c.id);
@@ -170,12 +170,12 @@ public with sharing class TriggerHandle
 				// action is insert
 				if(action.equalsIgnoreCase('insert'))
 				{
-					c.NumberOfPassedStudents__c = classIDMapWithPassedStudents.get(c.id);
+					c.NumberOfPassedStudents__c += classIDMapWithPassedStudents.get(c.id);
 				}
 				// action is delete
 				else
 				{
-					c.NumberOfPassedStudents__c = classIDMapWithPassedStudents.get(c.id) - 1;
+					c.NumberOfPassedStudents__c -= classIDMapWithPassedStudents.get(c.id) ;
 				}
 				update c ; 
 				classIDMapWithPassedStudents.remove(c.id);

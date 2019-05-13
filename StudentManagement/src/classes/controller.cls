@@ -8,9 +8,22 @@ public with sharing class Controller {
 	public String idStudent {get;set;}
 	public Boolean isColumnChecked {get; set;}
 	public Student__c student {get; set;}
+
+	public String lastNameDetails {get; set;}
+	public String firstNameDetails {get; set;}
+	public String genderDetails {get; set;}
+	public String birthdayDetails {get; set;}
+	public Double score1Details {get; set;}
+	public Double score2Details {get; set;}
+	public Double score3Details {get; set;}
+	public Double averageScoreDetails {get; set;}
+	public String stateDetails {get; set;}
+
+	
 	public Controller(){
 		this.student = new Student__c();
 		this.objKeySearch = new KeySearchDTO();
+		this.lastNameDetails ='aa';
 	}
 
 	public class KeySearchDTO{
@@ -36,8 +49,43 @@ public with sharing class Controller {
 			this.student = s;
 			this.isSelected = false;
 		}
+		public Output(){}
+	}
+	public PageReference doDetails(){
+	    String idStudentGet = ApexPages.CurrentPage().getParameters().get('idStudent');
+	    Student__c studentSelected = [SELECT 
+		    					AverageScore__c
+		    					,Birthday__c
+		    					,Namef__c
+		    					,Namel__c
+		    					,Score1__c
+		    					,Score2__c
+		    					,Score3__c
+		    					,State__c
+		    					,Gender__c
+		    					FROM Student__c
+		    					WHERE id =: idStudentGet];
+	    this.getStudentDetails(studentSelected);
+	    PageReference pr = Page.StudentDetails;
+	    pr.setRedirect(false);
+	    return pr;
 	}
 
+	private void getStudentDetails(Student__c s){
+		this.lastNameDetails = s.Namel__c;
+		this.firstNameDetails = s.Namef__c;
+		if(s.Gender__c){
+			this.genderDetails = 'Female';
+		}else{
+			this.genderDetails = 'Male';
+		}
+		this.birthdayDetails = s.Birthday__c.format();
+		this.score1Details = s.Score1__c;
+		this.score2Details = s.Score2__c;
+		this.score3Details = s.Score3__c;
+		this.averageScoreDetails = s.AverageScore__c;
+		this.stateDetails = s.State__c;
+	}
 	public PageReference dosubmit(){
 	    PageReference pr = new PageReference('/apex/AddNewStudent');
 	    pr.setRedirect(true);
@@ -75,17 +123,45 @@ public with sharing class Controller {
 										WHERE Name LIKE: this.objKeySearch.studentName.Name
 										OR Class__r.Name LIKE: this.objKeySearch.className
 										OR (Student__c.Birthday__c > :this.objKeySearch.objStudentFrom.Birthday__c
-										AND Student__c.Birthday__c < :this.objKeySearch.objStudentFrom.Birthday__c) ];
+										AND Student__c.Birthday__c < :this.objKeySearch.objStudentTo.Birthday__c) ];
 		List<Output> result = new List<Output>();
 		for(Student__c s : studentGetList){
 			result.add(new Output(s));
 		}
-		if(this.objKeySearch.increasing){
-			result.sort();
+		return this.sort(result, this.objKeySearch.increasing);
+		 
+	}
+	private List<Output> sort(List<Output> l, Boolean increasing){
+		List<Output> result = new List<Output>();
+		if(increasing){
+			while(!l.isEmpty()){
+				String max = l.get(0).student.Namef__c;
+				Output maxObj = l.get(0);
+				for(Output o :l){
+					if(o.student.Namef__c.compareTo(max) > 0){
+						max = o.student.Namef__c;
+						maxObj = o;
+					}
+				}
+				result.add(new Output(maxObj.student));
+				l.remove(l.indexOf(maxObj));
+			}
+		}else{
+			while(!l.isEmpty()){
+				String min = l.get(0).student.Namef__c;
+				Output minObj = l.get(0);
+				for(Output o :l){
+					if(o.student.Namef__c.compareTo(min) < 0){
+						min = o.student.Namef__c;
+						minObj = o;
+					}
+				}
+				result.add(new Output(minObj.student));
+				l.remove(l.indexOf(minObj));
+			}
 		}
 		return result;
 	}
-
 	public PageReference doInsert(){
 		PageReference ref = null;
 		try{
