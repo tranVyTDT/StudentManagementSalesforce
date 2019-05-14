@@ -3,6 +3,8 @@
 	<types>
 		<members>Controller</members>
 		<members>TriggerHandle</members>
+		<members>StudentDetailsController</members>
+		<members>UpdateStudentController</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
@@ -13,6 +15,7 @@
 		<members>AddNewStudent</members>
 		<members>MainPage</members>
 		<members>StudentDetails</members>
+		<members>UpdateStudent</members>
 		<name>ApexPage</name>
 	</types>
 	<types>

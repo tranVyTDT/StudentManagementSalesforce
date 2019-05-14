@@ -10,6 +10,12 @@
 		border:1px solid #000000;
 		background:#78909c !important
 	}
+	.errorClass {
+	background-color: #ff5252;
+	}
+	.normalClass {
+	background-color: #ffffff;
+	}
 </style>
 		<!-- get input form user-->
 		<apex:form >
@@ -58,16 +64,22 @@
 			<apex:outputPanel id="pinserted">
 				<apex:pageBlock >
 			      	<apex:pageBlockTable value="{!OutputList}" var="s">
-			      		<apex:column >
+			      		<apex:column 
+			      		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
 			      			<apex:facet name="header">
-								<apex:inputCheckbox />
+								<apex:inputCheckbox 
+								onclick="selectAllCheckboxes(this,'subcheckbox')"/>
 							</apex:facet>
-			      			<apex:inputCheckbox value="{!s.isSelected}"/>
+			      			<apex:inputCheckbox 
+			      			value="{!s.isSelected}"
+			      			id="subcheckbox"/>
 			      		</apex:column>
-				   		<apex:column headerValue="First Name" >
+				   		<apex:column headerValue="First Name" 
+				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
 				   			<apex:outputField value="{!s.student.Namef__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Last Name" >
+				   		<apex:column headerValue="Last Name" 
+				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
 				   			<apex:commandButton 
 				   				value="{!s.student.Namel__c}" 
 				   				action="{!doDetails}"
@@ -77,34 +89,42 @@
 				   				<apex:param value="{!s.student.id}" assignTo="{!idStudent}"  name="idStudent"/>
 				   			</apex:commandButton>
 				   		</apex:column>
-				   		<apex:column headerValue="Birthday" >
+				   		<apex:column headerValue="Birthday" 
+				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
 				   			<apex:outputField value="{!s.student.Birthday__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Gerder">
+				   		<apex:column headerValue="Gerder" 
+				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
 				   			<apex:inputCheckbox value="{!s.student.Gender__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Score1" >
+				   		<apex:column headerValue="Score1" 
+				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
 				   			<apex:outputField value="{!s.student.Score1__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Score2" >
+				   		<apex:column headerValue="Score2" 
+				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
 				   			<apex:outputField value="{!s.student.Score2__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Score3" >
+				   		<apex:column headerValue="Score3" 
+				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
 				   			<apex:outputField value="{!s.student.Score3__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Average Score" >
+				   		<apex:column headerValue="Average Score" 
+				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
 				   			<apex:outputField value="{!s.student.AverageScore__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="State" >
+				   		<apex:column headerValue="State" 
+				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
 				   			<apex:outputField value="{!s.student.State__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="{!sumstudents}">
+				   		<apex:column headerValue="{!sumstudents}" 
+				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
 				   				<apex:commandButton 
 				   				value="Update" 
-				   				action="{!actionDeleteStudent}"  
+				   				action="{!goUpdateStudent}"  
 				   				reRender="pinserted"
-				   				style="background: #ffffff;border: 0px ;text-decoration: underline"
-				   				>
+				   				style="background: #ffffff;border: 0px ;text-decoration: underline">
+				   					<apex:param value="{!s.student.id}" assignTo="{!idStudent}"  name="idStudent"/>
 				   				</apex:commandButton>
 				   				<span>|</span>
 				   				<apex:commandButton 
@@ -112,9 +132,8 @@
 				   				action="{!actionDeleteStudent}"  
 				   				reRender="pinserted"
 				   				style="background: #ffffff;border: 0px ;text-decoration: underline"
-				   				onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }"
-				   				>
-				   					<apex:param value="{!s.student.StudentId__c}" assignTo="{!idStudent}"  name="idStudent"/>
+				   				onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }">
+				   					<apex:param value="{!s.student.id}" assignTo="{!idStudent}"  name="idStudent"/>
 				   				 </apex:commandButton>
 				   		</apex:column>
 			      	</apex:pageBlockTable>
@@ -128,6 +147,16 @@ function gotoAddNewStudentPage() {
 function gotoStudentDetailsPage() {
 	window.location = '/apex/StudentDetails';
 }
+function selectAllCheckboxes(cb,cbid){
+            var inputElem = document.getElementsByTagName("input");                    
+            for(var i=0; i<inputElem.length; i++)
+            {            
+                 if(inputElem[i].id.indexOf(cbid)!=-1){                                       
+                    inputElem[i].checked = cb.checked;
+                }
+            }
+        }
+
 </script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script type="text/javascript">

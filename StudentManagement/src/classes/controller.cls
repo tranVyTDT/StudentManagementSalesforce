@@ -6,24 +6,11 @@ public with sharing class Controller {
 	public String userselectSecondpage {get; set;}
 	public String sumstudents {get;set;}
 	public String idStudent {get;set;}
-	public Boolean isColumnChecked {get; set;}
 	public Student__c student {get; set;}
 
-	public String lastNameDetails {get; set;}
-	public String firstNameDetails {get; set;}
-	public String genderDetails {get; set;}
-	public String birthdayDetails {get; set;}
-	public Double score1Details {get; set;}
-	public Double score2Details {get; set;}
-	public Double score3Details {get; set;}
-	public Double averageScoreDetails {get; set;}
-	public String stateDetails {get; set;}
-
-	
 	public Controller(){
 		this.student = new Student__c();
 		this.objKeySearch = new KeySearchDTO();
-		this.lastNameDetails ='aa';
 	}
 
 	public class KeySearchDTO{
@@ -53,39 +40,17 @@ public with sharing class Controller {
 	}
 	public PageReference doDetails(){
 	    String idStudentGet = ApexPages.CurrentPage().getParameters().get('idStudent');
-	    Student__c studentSelected = [SELECT 
-		    					AverageScore__c
-		    					,Birthday__c
-		    					,Namef__c
-		    					,Namel__c
-		    					,Score1__c
-		    					,Score2__c
-		    					,Score3__c
-		    					,State__c
-		    					,Gender__c
-		    					FROM Student__c
-		    					WHERE id =: idStudentGet];
-	    this.getStudentDetails(studentSelected);
-	    PageReference pr = Page.StudentDetails;
-	    pr.setRedirect(false);
+	    PageReference pr =  new PageReference('/apex/StudentDetails?id=' + idStudentGet);
 	    return pr;
 	}
 
-	private void getStudentDetails(Student__c s){
-		this.lastNameDetails = s.Namel__c;
-		this.firstNameDetails = s.Namef__c;
-		if(s.Gender__c){
-			this.genderDetails = 'Female';
-		}else{
-			this.genderDetails = 'Male';
-		}
-		this.birthdayDetails = s.Birthday__c.format();
-		this.score1Details = s.Score1__c;
-		this.score2Details = s.Score2__c;
-		this.score3Details = s.Score3__c;
-		this.averageScoreDetails = s.AverageScore__c;
-		this.stateDetails = s.State__c;
+	public PageReference goUpdateStudent(){
+		String idStudentGet = ApexPages.CurrentPage().getParameters().get('idStudent');
+		System.debug(idStudentGet);
+		PageReference pr =  new PageReference('/apex/UpdateStudent?id=' + idStudentGet);
+	    return pr;
 	}
+
 	public PageReference dosubmit(){
 	    PageReference pr = new PageReference('/apex/AddNewStudent');
 	    pr.setRedirect(true);
@@ -176,7 +141,7 @@ public with sharing class Controller {
 		} catch(Exception ex){
 			ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, ex.getMessage()));
 		}
-
+		ApexPages.addMessage(new ApexPages.message(ApexPages.severity.CONFIRM, 'add new student success'));
 		return ref;
 	}
 
@@ -195,7 +160,7 @@ public with sharing class Controller {
 	public PageReference actionDeleteStudent(){
 		String idStudentGet = ApexPages.CurrentPage().getParameters().get('idStudent');
 		for(Output s : this.OutputList){
-			if(idStudentGet.equalsIgnoreCase(s.student.StudentId__c)){
+			if(idStudentGet.equalsIgnoreCase(s.student.id)){
 				delete s.student;
 			}
 		}

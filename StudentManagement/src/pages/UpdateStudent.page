@@ -1,0 +1,68 @@
+<apex:page showHeader="true" sidebar="true" controller="UpdateStudentController"  docType="html-5.0">
+<style type="text/css">
+		.dateFormat{
+		display: none;
+	}
+</style>
+	<apex:form>
+		<apex:pageMessages id="message"/>
+		<table>
+			<tr>
+				<th style="width: 100px"></th><th style="width: 100px"></th>
+			</tr>
+			<tr>
+				<td><apex:commandButton value="Back" action="{!goBack}" style="background: #ffffff;border: 0px ;text-decoration: underline"/></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td>
+					<apex:inputField value="{!student.Namef__c}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>First Name</td>
+				<td>
+					<apex:inputField value="{!student.Namel__c}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td>
+					<apex:inputField value="{!student.Gender__c}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>BirthDate</td>
+				<td>
+					<apex:inputField value="{!student.Birthday__c}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Score 1</td>
+				<td>
+					<apex:inputField value="{!student.Score1__c}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Score 2</td>
+				<td>
+					<apex:inputField value="{!student.Score2__c}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Score 3</td>
+				<td>
+					<apex:inputField value="{!student.Score3__c}"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<apex:commandButton 
+					value="Update" 
+					action="{!updateStudent}"
+					style="float:right;background: #78909c;width: 100px"/>
+				</td>
+			</tr>
+		</table>
+	</apex:form>
+</apex:page>
