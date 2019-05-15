@@ -8,87 +8,103 @@
 <apex:pageMessages id="message"/>
 <table>
 	<tr>
-		<th style="width: 100px"></th><th style="width: 100px"> </th><th style="width: 100px"></th>
+		<th style="width: 100px"></th>
+		<th style="width: 100px"></th>
+		<th style="width: 100px"></th>
 	</tr>
 	<tr>
-		<td><apex:commandButton value="Back" action="{!goBack}" style="background: #ffffff;border: 0px ;text-decoration: underline"/></td>
+		<td>
+			<apex:commandButton 
+				value="Back" 
+				action="{!goBack}" 
+				style="background: #ffffff;border: 0px ;text-decoration: underline"/>
+		</td>
 	</tr>
 	<tr>
 		<td>Last Name</td> 
 		<td colspan="2">
-			<apex:outputText value="{!lastNameDetails}" 
-			style="float:left"/>
+			<apex:outputText 
+				value="{!lastNameDetails}" 
+				style="float:left"/>
 		</td>
 	</tr>
 	<tr>
 		<td>First Name</td> 
 		<td colspan="2">
-			<apex:outputText value="{!firstNameDetails}" 
-			style="float:left"/>	
+			<apex:outputText 
+				value="{!firstNameDetails}" 
+				style="float:left"/>	
 		</td>
 	</tr>
 	<tr>
 		<td>Gender</td> 
 		<td colspan="2">
-			<apex:outputText value="{!genderDetails}" 
-			style="float:left"/>
+			<apex:outputText 
+				value="{!genderDetails}" 
+				style="float:left"/>
 		</td>
 	</tr>
 	<tr>
 		<td>Birthday</td> 
 		<td>
-			<apex:outputText value="{!birthdayDetails}" 
-			style="float:right"/>
+			<apex:outputText 
+				value="{!birthdayDetails}" 
+				style="float:right"/>
 		</td>
 	</tr>
 	<tr>
 		<td>Score 1</td> 
 		<td >
-			<apex:outputText value="{!score1Details}" 
-			style="float:right"/>
+			<apex:outputText 
+				value="{!score1Details}" 
+				style="float:right"/>
 		</td>
 	</tr>
 	<tr>
 		<td>Score 2</td> 
 		<td >
-			<apex:outputText value="{!score2Details}" 
-			style="float:right"/>
+			<apex:outputText 
+				value="{!score2Details}" 
+				style="float:right"/>
 		</td>
 	</tr>
 	<tr>
 		<td>Score 3</td> 
 		<td >
-			<apex:outputText value="{!score3Details}" 
-			style="float:right"/>
+			<apex:outputText 
+				value="{!score3Details}" 
+				style="float:right"/>
 		</td>
 	</tr>
 	<tr>
 		<td>Average Score</td> 
 		<td >
-			<apex:outputText value="{!averageScoreDetails}" 
-			style="float:right"/>
+			<apex:outputText 
+				value="{!averageScoreDetails}" 
+				style="float:right"/>
 		</td>
 	</tr>
 	<tr>
 		<td>State</td> 
 		<td colspan="2">
-			<apex:outputText value="{!stateDetails}" 
-			style="float:left"/>
+			<apex:outputText 
+				value="{!stateDetails}" 
+				style="float:left"/>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="2">
 			<apex:commandButton 
-			value="Update" 
-			action="{!goUpdate}"
-			style="float:right;background: #78909c;width: 100px"/>
+				value="Update" 
+				action="{!goUpdate}"
+				style="float:right;background: #78909c;width: 100px"/>
 		</td> 
 		<td > 
 			<apex:commandButton 
-			value="Delete"
-			action="{!actionDeleteStudent}"
-			style="float:right;background: #78909c;width: 100px"
-			onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }"/>
+				value="Delete"
+				action="{!actionDeleteStudent}"
+				style="float:right;background: #78909c;width: 100px"
+				onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }"/>
 		</td>
 	</tr>
 </table>

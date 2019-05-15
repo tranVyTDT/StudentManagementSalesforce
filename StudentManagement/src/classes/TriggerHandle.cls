@@ -1,15 +1,14 @@
 public with sharing class TriggerHandle 
 {
-	public TriggerHandle () 
-	{
-		
-	}
+	public TriggerHandle () {}
+
 	public void onBeforeInsert (List<Student__c> newStudentList)
 	{
 		try
 		{
 			for(Student__c s : newStudentList)
 			{
+				//error if user have not fill score or birthday
 				if(s.Score1__c == -1)
 				{
 					s.Score1__c.addError('please enter chemistry score');
@@ -28,19 +27,18 @@ public with sharing class TriggerHandle
 				}
 				else
 				{
-
+					// errer if age greater than 18 or less than 6  
 					Integer age = Date.today().daysBetween(s.BirthDay__c) / 365;
 					if(age < -18 || age > -6)
 					{
 						s.BirthDay__c.addError('invalid birthday');
 					}
-
 				}
 			}
 		}
 		catch(Exception ex )
 		{
-			//throw new CustomException(ex.getMessage());
+			throw new CustomException(ex.getMessage());
 		}	
 	}
 	public void onAfterInsert(List<Student__c> newStudentList)
@@ -88,19 +86,23 @@ public with sharing class TriggerHandle
 			}
 
 		}
+		// select all classes to compare with students be selected
 		List<Class__c> classList = [SELECT id 
 									, NumberOfFailedStudents__c
 									, NumberOfPassedStudents__c
-							FROM Class__c];
+									FROM Class__c];
 		for(Class__c c : classList)
 		{
 			if(differentStudenMap.containsKey(c.id)){
+				// update number of passed and falied in class
+				//student changed from falied to passed
 				if(differentStudenMap.get(c.id).equalsIgnoreCase('passed'))
 				{
 					c.NumberOfPassedStudents__c += 1;
 					c.NumberOfFailedStudents__c -= 1;
 					update c;
 				}
+				//student changed from passed to failed
 				else
 				{
 					c.NumberOfPassedStudents__c -= 1;
@@ -145,8 +147,8 @@ public with sharing class TriggerHandle
 			}
 		}
 		List<Class__c> classList = [SELECT id, NumberOfFailedStudents__c, NumberOfPassedStudents__c From Class__c];
-		// execute update number of passed and failed students
-		for(Class__c c : classList)
+		//execute update number of passed and failed students
+		for(Class__c c : classList) 
 		{
 			// execute update number failed students
 			if(classIDMapWithFaliedStudents.containsKey(c.id))

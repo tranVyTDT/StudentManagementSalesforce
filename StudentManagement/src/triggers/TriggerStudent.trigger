@@ -13,6 +13,8 @@ trigger triggerStudent on Student__c (before insert
 	}
 	else
 	{
+		// update number of students 
+		// update number of failed and passed students
 		if(Trigger.isInsert)
 		{
 			handle.onAfterInsert(Trigger.new);

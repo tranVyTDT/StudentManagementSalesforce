@@ -13,7 +13,12 @@
 <apex:pageMessages id="message"/>
 	<table>
 		<tr>
-			<td><apex:commandButton value="Back" action="{!goBack}" style="background: #ffffff;border: 0px ;text-decoration: underline"/></td>
+			<td>
+				<apex:commandButton 
+					value="Back" 
+					action="{!goBack}" 
+					style="background: #ffffff;border: 0px ;text-decoration: underline"/>
+			</td>
 		</tr>
 		<tr>
 			<td>First Name</td><td><apex:inputField value="{!student.Namef__c}" styleClass="input"/></td>
@@ -40,9 +45,9 @@
 			<td>Class</td>
 			<td>
 				<apex:selectList 
-				multiselect="false" 
-				size="1" value="{!userselectSecondPage}" 
-				styleClass="input">
+					multiselect="false" 
+					size="1" value="{!userselectSecondPage}" 
+					styleClass="input">
 				 	<apex:selectOptions value="{!items}" > </apex:selectOptions>
 				</apex:selectList>
 			</td>
@@ -50,9 +55,9 @@
 		<tr>
 			<td colspan="2">
 				<apex:commandButton 
-				value="Add" 
-				action="{!doInsert}" 
-				style="background: #78909c;width: 200px"/>
+					value="Add" 
+					action="{!doInsert}" 
+					style="background: #78909c;width: 200px"/>
 			</td>
 		</tr>
 	</table>
@@ -61,16 +66,16 @@
 <script type="text/javascript">
   $j = jQuery.noConflict();
    $j(document).ready(function() {
-                      var startYear=1900;
-                      var endYear=2100;                   
-                      var htmlStr='';                  
-                      if(startYear<endYear){
-                                 for(i=startYear;i<endYear+1;i++){
-                                                 htmlStr += "<option value=\""+i+"\">"+i+"</option>";
-                                 }
-                                 $j('#calYearPicker').html(htmlStr);
-                  }
+    var startYear=1900;
+    var endYear=2100;                   
+    var htmlStr='';                  
+    if(startYear<endYear){
+        for(i=startYear;i<endYear+1;i++){
+            htmlStr += "<option value=\""+i+"\">"+i+"</option>";
+            }
+        $j('#calYearPicker').html(htmlStr);
+    }
    $j('#sidebarDiv #hideThisHomePageComp').parent().parent().hide();
                   }  );
-  </script>
+</script>
 </apex:page>

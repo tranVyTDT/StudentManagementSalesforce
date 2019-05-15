@@ -8,10 +8,16 @@
 		<apex:pageMessages id="message"/>
 		<table>
 			<tr>
-				<th style="width: 100px"></th><th style="width: 100px"></th>
+				<th style="width: 100px"></th>
+				<th style="width: 100px"></th>
 			</tr>
 			<tr>
-				<td><apex:commandButton value="Back" action="{!goBack}" style="background: #ffffff;border: 0px ;text-decoration: underline"/></td>
+				<td>
+					<apex:commandButton 
+						value="Back" 
+						action="{!goBack}" 
+						style="background: #ffffff;border: 0px ;text-decoration: underline"/>
+				</td>
 			</tr>
 			<tr>
 				<td>Last Name</td>
@@ -58,9 +64,9 @@
 			<tr>
 				<td colspan="2">
 					<apex:commandButton 
-					value="Update" 
-					action="{!updateStudent}"
-					style="float:right;background: #78909c;width: 100px"/>
+						value="Update" 
+						action="{!updateStudent}"
+						style="float:right;background: #78909c;width: 100px"/>
 				</td>
 			</tr>
 		</table>

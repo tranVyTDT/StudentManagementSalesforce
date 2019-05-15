@@ -16,26 +16,39 @@
 	.normalClass {
 	background-color: #ffffff;
 	}
+	.headerRow .TableTitle {
+    	background-color: #1a237e !important;
+    	background-image: none !important; //This is needed if you want to overwrite the header background
+    	color: #CC0000 !important;
+    	font-size:100% !important;
+  	}
+
 </style>
 		<!-- get input form user-->
 		<apex:form >
 			<table>
 				<tr>
-						<td >Name : </td>
-						<td >
-							<apex:inputField value="{!objKeySearch.studentName.Name}" style="width: 200px;height: 17px;"/>
-						</td>
-						<td>
-							<apex:inputCheckbox value="{!objkeySearch.increasing}"  />
-						</td>
-						<td>
-							<span>increasing</span>
-						</td>
+					<td >Name : </td>
+					<td >
+						<apex:inputField 
+							value="{!objKeySearch.studentName.Name}" 
+							style="width: 200pxheight: 17px;"/>
+					</td>
+					<td>
+						<apex:inputCheckbox value="{!objkeySearch.increasing}"  />
+					</td>
+					<td>
+						<span>increasing</span>
+					</td>
 				</tr>
 				<tr>
 						<td>Class : </td>
 						<td>
-							<apex:selectList multiselect="false" size="1" value="{!objkeySearch.className}" style="width: 204px;height: 22px;">
+							<apex:selectList 
+								multiselect="false" 
+								size="1" 
+								value="{!objkeySearch.className}" 
+								style="width: 204px;height: 22px;">
 								 <apex:selectOptions value="{!items}" > </apex:selectOptions>
 							</apex:selectList>
 						</td>
@@ -57,83 +70,122 @@
 			</table>
 	<!-- showing the table-->
 			<apex:pageMessages id="message"/>
-			<apex:commandButton value="Search" action="{!actionSearch}"  styleClass="button"/>
-			<apex:commandButton value="Add" action="{!doSubmit}" oncomplete="gotoAddNewStudentPage();" styleClass="button" />
-			<apex:commandButton value="Delete" action="{!actionDeleteStudentBeSelected}" styleClass="button" 
-						onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }"/>
+			<apex:commandButton 
+				value="Search" 
+				action="{!actionSearch}"  
+				styleClass="button"/>
+			<apex:commandButton 
+				value="Add" 
+				action="{!doSubmit}"
+				oncomplete="gotoAddNewStudentPage();" 
+				styleClass="button" />
+			<apex:commandButton 
+				value="Delete" 
+				action="{!actionDeleteStudentBeSelected}" 
+				styleClass="button" 
+				onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }"/>
 			<apex:outputPanel id="pinserted">
 				<apex:pageBlock >
-			      	<apex:pageBlockTable value="{!OutputList}" var="s">
+			      	<apex:pageBlockTable value="{!objStudentList}" var="s">
 			      		<apex:column 
-			      		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
+			      				styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}"
+			      				headerClass="TableTitle">
 			      			<apex:facet name="header">
-								<apex:inputCheckbox 
-								onclick="selectAllCheckboxes(this,'subcheckbox')"/>
+								<apex:inputCheckbox onclick="selectAllCheckboxes(this,'subcheckbox')"/>
 							</apex:facet>
 			      			<apex:inputCheckbox 
-			      			value="{!s.isSelected}"
-			      			id="subcheckbox"/>
+			      				value="{!s.isSelected}"
+			      				id="subcheckbox"/>
 			      		</apex:column>
-				   		<apex:column headerValue="First Name" 
-				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
+				   		<apex:column 
+				   			headerValue="First Name" 
+				   			styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}"
+				   			headerClass="TableTitle">
 				   			<apex:outputField value="{!s.student.Namef__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Last Name" 
-				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
+				   		<apex:column 
+				   			headerValue="Last Name" 
+				   			styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}"
+				   			headerClass="TableTitle">
 				   			<apex:commandButton 
 				   				value="{!s.student.Namel__c}" 
 				   				action="{!doDetails}"
 				   				oncomplete="gotoStudentDetailsPage();"
 				   				reRender="pinserted"
 				   				style="background: #ffffff;border: 0px ;text-decoration: underline">
-				   				<apex:param value="{!s.student.id}" assignTo="{!idStudent}"  name="idStudent"/>
+				   				<apex:param 
+				   					value="{!s.student.id}" 
+				   					assignTo="{!idStudent}"  
+				   					name="idStudent"/>
 				   			</apex:commandButton>
 				   		</apex:column>
-				   		<apex:column headerValue="Birthday" 
-				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
+				   		<apex:column 
+				   			headerValue="Birthday" 
+				   			styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}"
+				   			headerClass="TableTitle">
 				   			<apex:outputField value="{!s.student.Birthday__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Gerder" 
-				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
+				   		<apex:column 
+				   			headerValue="Gerder" 
+				   			styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}"
+				   			headerClass="TableTitle">
 				   			<apex:inputCheckbox value="{!s.student.Gender__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Score1" 
-				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
+				   		<apex:column 
+				   			headerValue="Score1" 
+				   			styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}"
+				   			headerClass="TableTitle">
 				   			<apex:outputField value="{!s.student.Score1__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Score2" 
-				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
+				   		<apex:column 
+				   			headerValue="Score2" 
+				   			styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}"
+				   			headerClass="TableTitle">
 				   			<apex:outputField value="{!s.student.Score2__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Score3" 
-				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
+				   		<apex:column 
+				   			headerValue="Score3" 
+				   			styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}"
+				   			headerClass="TableTitle">
 				   			<apex:outputField value="{!s.student.Score3__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="Average Score" 
-				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
+				   		<apex:column 
+				   			headerValue="Average Score" 
+				   			styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}"
+				   			headerClass="TableTitle">
 				   			<apex:outputField value="{!s.student.AverageScore__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="State" 
-				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
+				   		<apex:column 
+				   			headerValue="State" 
+				   			styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}"
+				   			headerClass="TableTitle">
 				   			<apex:outputField value="{!s.student.State__c}"/>
 				   		</apex:column>
-				   		<apex:column headerValue="{!sumstudents}" 
-				   		styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}">
+				   		<apex:column 
+				   			headerValue="{!sumstudents}" 
+				   			styleClass="{!IF(s.student.State__c == 'Failed','errorClass','normalClass')}"
+				   			headerClass="TableTitle">
 				   				<apex:commandButton 
-				   				value="Update" 
-				   				action="{!goUpdateStudent}"  
-				   				reRender="pinserted"
-				   				style="background: #ffffff;border: 0px ;text-decoration: underline">
-				   					<apex:param value="{!s.student.id}" assignTo="{!idStudent}"  name="idStudent"/>
+				   					value="Update" 
+				   					action="{!goUpdateStudent}"  
+				   					reRender="pinserted"
+				   					style="background: #ffffff;border: 0px ;text-decoration: underline">
+				   					<apex:param 
+				   						value="{!s.student.id}" 
+				   						assignTo="{!idStudent}"  
+				   						name="idStudent"/>
 				   				</apex:commandButton>
 				   				<span>|</span>
 				   				<apex:commandButton 
-				   				value="Delete" 
-				   				action="{!actionDeleteStudent}"  
-				   				reRender="pinserted"
-				   				style="background: #ffffff;border: 0px ;text-decoration: underline"
-				   				onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }">
-				   					<apex:param value="{!s.student.id}" assignTo="{!idStudent}"  name="idStudent"/>
+				   					value="Delete" 
+				   					action="{!actionDeleteStudent}"  
+				   					reRender="pinserted"
+				   					style="background: #ffffff;border: 0px ;text-decoration: underline"
+				   					onclick="if (!confirm('Are you sure? This will delete member info')){ return false; }">
+				   					<apex:param 
+				   						value="{!s.student.id}" 
+				   						assignTo="{!idStudent}"  
+				   						name="idStudent"/>
 				   				 </apex:commandButton>
 				   		</apex:column>
 			      	</apex:pageBlockTable>
@@ -161,13 +213,17 @@ function selectAllCheckboxes(cb,cbid){
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script type="text/javascript">
   $j = jQuery.noConflict();
-   $j(document).ready(function() {                   var startYear=1900;                   var endYear=2100;                   var htmlStr='';                  if(startYear<endYear){
-                                 for(i=startYear;i<endYear+1;i++){
-                                                 htmlStr += "<option value=\""+i+"\">"+i+"</option>";
-                                 }
-                                 $j('#calYearPicker').html(htmlStr);
-                  }
+   $j(document).ready(function() {                   
+   	var startYear=1900;                   
+   	var endYear=2100;                   
+   	var htmlStr='';                  
+   	if(startYear<endYear){
+        for(i=startYear;i<endYear+1;i++){
+            htmlStr += "<option value=\""+i+"\">"+i+"</option>";
+            }
+        $j('#calYearPicker').html(htmlStr);
+    }
    $j('#sidebarDiv #hideThisHomePageComp').parent().parent().hide();
-                  }  );
+    });
   </script>
 </apex:page>
