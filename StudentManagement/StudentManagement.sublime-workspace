@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"student",
+				"studentId"
+			],
+			[
 				"page",
 				"apex:pageBlock"
 			],
@@ -14,10 +18,6 @@
 			[
 				"Studen",
 				"StudentDetails"
-			],
-			[
-				"student",
-				"studentSelectedById"
 			],
 			[
 				"Stud",
@@ -260,21 +260,11 @@
 	"buffers":
 	[
 		{
-			"file": "src/classes/Controller.cls",
+			"file": "src/pages/MainPage.page",
 			"settings":
 			{
-				"buffer_size": 6461,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/pages/StudentDetails.page",
-			"settings":
-			{
-				"buffer_size": 831,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"buffer_size": 7887,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -320,21 +310,21 @@
 	"expanded_folders":
 	[
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/triggers"
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src"
 	],
 	"file_history":
 	[
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/MainPage.page",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/StudentDetails.page",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/triggers/triggerStudent.trigger",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/TriggerHandle.cls",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/AddNewStudent.page",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/MainPage.page",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/StudentDetailsController.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/Controller.cls",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/UpdateStudentController.cls",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/UpdateStudent.page",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/StudentDetails.page",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/AddNewStudent.page",
 		"/C/Users/Dev002/Downloads/PRO_ProjectTrg.trigger",
 		"/C/Users/Dev002/Downloads/PRO_ProjectTrgHndl.cls",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/triggers/triggerStudent.trigger",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/TriggerHandle.cls-meta.xml",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/triggers/triggerStudent.trigger-meta.xml",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/package.xml",
@@ -362,6 +352,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"student",
+			"outputlist",
 			"debug",
 			"message",
 			"studentList",
@@ -389,48 +381,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/classes/Controller.cls",
+					"file": "src/pages/MainPage.page",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6461,
+						"buffer_size": 7887,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1610,
-								1619
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 864.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/pages/StudentDetails.page",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 831,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								805,
-								805
+								0,
+								0
 							]
 						],
 						"settings":
@@ -439,10 +402,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 324.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -481,7 +444,7 @@
 	"menu_visible": true,
 	"output.MavensMate-OutputPanel":
 	{
-		"height": 90.0
+		"height": 174.0
 	},
 	"output.find_results":
 	{

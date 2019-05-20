@@ -50,7 +50,7 @@ public with sharing class Controller {
 	    return pr;
 	}
 
-	public PageReference dosubmit(){
+	public PageReference doSubmit(){
 	    PageReference pr = new PageReference('/apex/AddNewStudent');
 	    pr.setRedirect(true);
 	    return pr;

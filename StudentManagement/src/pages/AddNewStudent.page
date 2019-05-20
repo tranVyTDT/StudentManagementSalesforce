@@ -46,7 +46,7 @@
 			<td>
 				<apex:selectList 
 					multiselect="false" 
-					size="1" value="{!userselectSecondPage}" 
+					size="1" value="{!classNameInserting}" 
 					styleClass="input">
 				 	<apex:selectOptions value="{!items}" > </apex:selectOptions>
 				</apex:selectList>

@@ -5,6 +5,8 @@
 		<members>TriggerHandle</members>
 		<members>StudentDetailsController</members>
 		<members>UpdateStudentController</members>
+		<members>ImportDataPatch</members>
+		<members>ImportDataScheduleBatch</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
