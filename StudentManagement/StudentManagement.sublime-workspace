@@ -266,6 +266,15 @@
 				"buffer_size": 7887,
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"file": "src/classes/TriggerHandle.cls",
+			"settings":
+			{
+				"buffer_size": 6224,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -310,7 +319,8 @@
 	"expanded_folders":
 	[
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src"
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes"
 	],
 	"file_history":
 	[
@@ -376,7 +386,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -392,8 +402,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								497,
+								497
 							]
 						],
 						"settings":
@@ -403,6 +413,35 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/classes/TriggerHandle.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6224,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3935,
+								3935
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 66.0,
+						"translation.y": 2484.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

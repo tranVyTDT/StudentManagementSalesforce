@@ -138,7 +138,7 @@ public with sharing class TriggerHandle
 			{
 				if(classIDMapWithFaliedStudents.containsKey(s.Class__c))
 				{
-					classIDMapWithFaliedStudents.put(s.Class__c, classIDMapWithFaliedStudents.get(s.Class__c));
+					classIDMapWithFaliedStudents.put(s.Class__c, classIDMapWithFaliedStudents.get(s.Class__c) + 1);
 				}
 				else
 				{
