@@ -126,6 +126,7 @@ public with sharing class Controller {
 		}
 		return result;
 	}
+	
 	public PageReference doInsert(){
 		PageReference ref = null;
 		try{
