@@ -64,8 +64,7 @@ public with sharing class Controller {
 
 	public List<SelectOption> getItems(){
 		List<SelectOption> options = new List<SelectOption>();
-		List<Class__c> classList = [SELECT className__C 
-								FROM Class__c];
+		List<Class__c> classList = [SELECT className__C FROM Class__c];
 		for (Class__c c : classList){
 			options.add(new SelectOption((String)c.get('className__c'),(String)c.get('className__c')));
 		}
@@ -85,13 +84,14 @@ public with sharing class Controller {
 												,StudentId__c
 										FROM Student__c
 										WHERE Name LIKE: this.objKeySearch.studentName.Name
-										OR Class__r.Name LIKE: this.objKeySearch.className
+										OR Class__r.className__c LIKE: this.objKeySearch.className
 										OR (Student__c.Birthday__c > :this.objKeySearch.objStudentFrom.Birthday__c
 										AND Student__c.Birthday__c < :this.objKeySearch.objStudentTo.Birthday__c) ];
 		List<StudentDTO> result = new List<StudentDTO>();
 		for(Student__c s : studentGetList){
 			result.add(new StudentDTO(s));
 		}
+
 		return this.sort(result, this.objKeySearch.increasing);
 		 
 	}

@@ -46,9 +46,11 @@ public with sharing class TriggerHandle
 		Savepoint sp;
 		try
 		{
+			System.debug(newStudentList);
+			sp = Database.setSavepoint();
 			this.executeNOStudentsUpdate(newStudentList , 'insert');
 			this.executeNOFAPStudentsUpdate(newStudentList , 'insert');
-			sp = Database.setSavepoint();
+			
 		}
 		catch(Exception ex)
 		{
@@ -202,8 +204,8 @@ public with sharing class TriggerHandle
 				classIDMap.put(s.Class__c, 1);
 			}
 		}
-
 		List<Class__c> classList = [SELECT id, NumberOfStudents__c From Class__c];
+		System.debug(classList.get(0).NumberOfStudents__c);
 		// execute updating number of students in classes
 		for(Class__c c : classList)
 		{
