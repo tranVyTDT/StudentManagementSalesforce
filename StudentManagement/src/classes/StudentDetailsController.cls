@@ -11,6 +11,7 @@ public with sharing class StudentDetailsController {
 
 	public StudentDetailsController() {
 		String studentId =  apexpages.currentpage().getparameters().get('id');
+		System.debug(studentId);
 		this.getStudentDetails(studentId);
 	}
 
@@ -68,4 +69,5 @@ public with sharing class StudentDetailsController {
 		}
 		ApexPages.addMessage(new ApexPages.message(ApexPages.severity.CONFIRM, 'delete success'));
 	}
+	
 }

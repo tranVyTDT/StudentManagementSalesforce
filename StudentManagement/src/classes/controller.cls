@@ -1,8 +1,6 @@
 public with sharing class Controller {
 	public List<StudentDTO> objStudentList {get;set;}
 	public KeySearchDTO objKeySearch {get; set;}
-	public String userinput {get; set;}
-	public String userselect {get; set;}
 	public String classNameInserting {get; set;}
 	public String sumStudents {get;set;}
 	public String idStudent {get;set;}
@@ -82,6 +80,7 @@ public with sharing class Controller {
 												,AverageScore__c
 												,State__c
 												,StudentId__c
+												,Student__c.Class__c
 										FROM Student__c
 										WHERE Name LIKE: this.objKeySearch.studentName.Name
 										OR Class__r.className__c LIKE: this.objKeySearch.className

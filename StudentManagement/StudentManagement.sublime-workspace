@@ -4,20 +4,56 @@
 		"selected_items":
 		[
 			[
-				"ob",
-				"objKeySearch"
+				"Clas",
+				"className__c"
+			],
+			[
+				"Name",
+				"Namef__c"
 			],
 			[
 				"Student",
-				"StudentDTO"
+				"Student__c"
 			],
 			[
-				"stu",
-				"studentComparison"
+				"Soc",
+				"Score3__c"
+			],
+			[
+				"Sco",
+				"Score2__c"
 			],
 			[
 				"Score",
 				"Score3__c"
+			],
+			[
+				"in",
+				"PUBLIC newInstance(Integer year, Integer month, Integer day) \tDate"
+			],
+			[
+				"ge",
+				"Gender__c"
+			],
+			[
+				"a",
+				"assert()"
+			],
+			[
+				"is",
+				"isTest"
+			],
+			[
+				"Class",
+				"Class__c"
+			],
+			[
+				"ob",
+				"objKeySearch"
+			],
+			[
+				"stu",
+				"studentComparison"
 			],
 			[
 				"op",
@@ -56,14 +92,6 @@
 				"Student__c"
 			],
 			[
-				"Sco",
-				"Score1__c"
-			],
-			[
-				"ge",
-				"gender"
-			],
-			[
 				"Nam",
 				"Namef__c"
 			],
@@ -82,10 +110,6 @@
 			[
 				"N",
 				"Namef__c"
-			],
-			[
-				"in",
-				"increasing"
 			],
 			[
 				"euq",
@@ -164,10 +188,6 @@
 				"trigger"
 			],
 			[
-				"is",
-				"isInsert"
-			],
-			[
 				"Tr",
 				"Trigger"
 			],
@@ -200,10 +220,6 @@
 				"Birthday__c"
 			],
 			[
-				"Name",
-				"Namel__c"
-			],
-			[
 				"na",
 				"Namef__c"
 			],
@@ -218,10 +234,6 @@
 			[
 				"tab",
 				"table\tTag"
-			],
-			[
-				"a",
-				"action"
 			],
 			[
 				"equa",
@@ -279,16 +291,16 @@
 			"file": "src/classes/Controller_test.cls",
 			"settings":
 			{
-				"buffer_size": 5910,
-				"line_ending": "Unix"
+				"buffer_size": 0,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "src/classes/Controller.cls",
 			"settings":
 			{
-				"buffer_size": 5573,
-				"line_ending": "Unix"
+				"buffer_size": 0,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -338,10 +350,10 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/StudentDetailsController.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/MainPage.page",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/TriggerHandle.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/triggers/triggerStudent.trigger",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/StudentDetailsController.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/Controller.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/UpdateStudentController.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/UpdateStudent.page",
@@ -362,7 +374,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 24.0
 	},
 	"find_in_files":
 	{
@@ -400,7 +412,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -409,36 +421,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5910,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/classes/Controller.cls",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5573,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
@@ -460,13 +443,42 @@
 					},
 					"stack_index": 1,
 					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/classes/Controller.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 24.0
 	},
 	"input":
 	{
@@ -507,7 +519,7 @@
 	"project": "StudentManagement.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":

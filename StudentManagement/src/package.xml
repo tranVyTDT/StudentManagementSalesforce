@@ -8,6 +8,8 @@
 		<members>ImportDataPatch</members>
 		<members>ImportDataScheduleBatch</members>
 		<members>Controller_test</members>
+		<members>StudentDetailsControllerTest</members>
+		<members>UpdateStudentControllerTest</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
