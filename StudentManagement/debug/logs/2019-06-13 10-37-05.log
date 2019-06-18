@@ -1,0 +1,76 @@
+36.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+10:37:06.2 (2701982)|USER_INFO|[EXTERNAL]|0050o00000WkyGG|ttvy@keizu.co.jp|Indochina Time|GMT+07:00
+10:37:06.2 (2840730)|EXECUTION_STARTED
+10:37:06.2 (2850372)|CODE_UNIT_STARTED|[EXTERNAL]|01p0o00000GMgLD|testBatch.testImportDataPatch()
+10:37:06.2 (3108034)|HEAP_ALLOCATE|[72]|Bytes:3
+10:37:06.2 (3152742)|HEAP_ALLOCATE|[77]|Bytes:152
+10:37:06.2 (3167359)|HEAP_ALLOCATE|[342]|Bytes:408
+10:37:06.2 (3181798)|HEAP_ALLOCATE|[355]|Bytes:408
+10:37:06.2 (3194491)|HEAP_ALLOCATE|[467]|Bytes:48
+10:37:06.2 (3220712)|HEAP_ALLOCATE|[139]|Bytes:6
+10:37:06.2 (3238459)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:60
+10:37:06.2 (3261372)|METHOD_ENTRY|[2]|01p0o00000GMgLD|testBatch.testBatch()
+10:37:06.2 (3269964)|STATEMENT_EXECUTE|[2]
+10:37:06.2 (3279598)|STATEMENT_EXECUTE|[2]
+10:37:06.2 (3287599)|METHOD_EXIT|[2]|testBatch
+10:37:06.2 (3319985)|HEAP_ALLOCATE|[50]|Bytes:5
+10:37:06.2 (3340199)|HEAP_ALLOCATE|[56]|Bytes:5
+10:37:06.2 (3349183)|HEAP_ALLOCATE|[64]|Bytes:7
+10:37:06.2 (3394589)|STATEMENT_EXECUTE|[6]
+10:37:06.2 (3396530)|STATEMENT_EXECUTE|[7]
+10:37:06.2 (3434525)|HEAP_ALLOCATE|[7]|Bytes:70
+10:37:06.2 (3445698)|SYSTEM_METHOD_ENTRY|[1]|Test.Test()
+10:37:06.2 (3449769)|STATEMENT_EXECUTE|[1]
+10:37:06.2 (3454953)|SYSTEM_METHOD_EXIT|[1]|Test
+10:37:06.2 (3474032)|METHOD_ENTRY|[7]||System.Test.startTest()
+10:37:06.2 (5116365)|METHOD_EXIT|[7]||System.Test.startTest()
+10:37:06.2 (5128950)|STATEMENT_EXECUTE|[9]
+10:37:06.2 (5134121)|HEAP_ALLOCATE|[9]|Bytes:56
+10:37:06.2 (5156341)|HEAP_ALLOCATE|[9]|Bytes:4
+10:37:06.2 (5527569)|SOQL_EXECUTE_BEGIN|[9]|Aggregations:0|SELECT id FROM Class__c WHERE className__c = 'Chemistry'
+10:37:06.2 (8807515)|SOQL_EXECUTE_END|[9]|Rows:0
+10:37:06.2 (8842612)|HEAP_ALLOCATE|[9]|Bytes:4
+10:37:06.2 (8857384)|HEAP_ALLOCATE|[9]|Bytes:0
+10:37:06.2 (8978325)|HEAP_ALLOCATE|[9]|Bytes:4
+10:37:06.2 (8993427)|HEAP_ALLOCATE|[9]|Bytes:34
+10:37:06.2 (9087367)|HEAP_ALLOCATE|[9]|Bytes:46
+10:37:06.2 (9339419)|FATAL_ERROR|System.QueryException: List has no rows for assignment to SObject
+
+Class.testBatch.testImportDataPatch: line 9, column 1
+10:37:06.2 (9351866)|FATAL_ERROR|System.QueryException: List has no rows for assignment to SObject
+
+Class.testBatch.testImportDataPatch: line 9, column 1
+10:37:06.9 (9359808)|CUMULATIVE_LIMIT_USAGE
+10:37:06.9 (9359808)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:37:06.9 (9359808)|TESTING_LIMITS
+10:37:06.9 (9359808)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:37:06.9 (9359808)|CUMULATIVE_LIMIT_USAGE_END
+
+10:37:06.2 (9427041)|CODE_UNIT_FINISHED|testBatch.testImportDataPatch()
+10:37:06.2 (10292400)|EXECUTION_FINISHED

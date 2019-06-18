@@ -230,6 +230,13 @@
             "xmlName": "CustomApplication"
         },
         {
+            "directoryName": "customMetadata",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "md",
+            "xmlName": "CustomMetadata"
+        },
+        {
             "directoryName": "flows",
             "inFolder": false,
             "metaFile": false,
@@ -365,13 +372,6 @@
             "metaFile": false,
             "suffix": "permissionset",
             "xmlName": "PermissionSet"
-        },
-        {
-            "directoryName": "customMetadata",
-            "inFolder": false,
-            "metaFile": false,
-            "suffix": "md",
-            "xmlName": "CustomMetadata"
         },
         {
             "directoryName": "datacategorygroups",

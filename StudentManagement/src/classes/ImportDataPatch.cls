@@ -7,15 +7,15 @@ global class ImportDataPatch implements Database.Batchable<sObject>, Database.St
 	global Database.QueryLocator start(Database.BatchableContext BC) {
 
 		return Database.getQueryLocator([SELECT 
-					st.id
-					,st.Score1__c
-					,st.Score2__c
-					,st.Score3__c	
-					FROM Student__c AS st
-					WHERE st.id NOT IN
-						(SELECT 
-						s.Student__c
-						FROM Score__c AS s)]);
+										st.id
+										,st.Score1__c
+										,st.Score2__c
+										,st.Score3__c	
+										FROM Student__c AS st
+										WHERE st.id NOT IN
+											(SELECT 
+											s.Student__c
+											FROM Score__c AS s)]);
 	}
 
    	global void execute(Database.BatchableContext BC, List<Student__c> scope) {

@@ -15,7 +15,7 @@ public with sharing class TriggerHandle
 				}
 				else if(s.Score2__c == -1)
 				{
-					s.Score2__c.addError('please enter physical score');
+					s.Score2__c.addError('please enter physic score');
 				}
 				else if(s.Score3__c == -1)
 				{
@@ -64,6 +64,7 @@ public with sharing class TriggerHandle
 	{
 		try
 		{
+			System.debug('delete run');
 			this.executeNOStudentsUpdate(oldStudentList, 'delete');
 			this.executeNOFAPStudentsUpdate(oldStudentList, 'delete');
 
@@ -213,11 +214,13 @@ public with sharing class TriggerHandle
 			{
 				// action is insert
 				if(action.equals('insert')){
+					System.debug('insert succed');
 					c.NumberOfStudents__c = classIDMap.get(c.id) + c.NumberOfStudents__c;
 				}
 				//action is delete
 				else
 				{
+					System.debug('delete succed');
 					c.NumberOfStudents__c = c.NumberOfStudents__c - classIDMap.get(c.id);
 				}
 				

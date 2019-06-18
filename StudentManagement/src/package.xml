@@ -10,6 +10,8 @@
 		<members>Controller_test</members>
 		<members>StudentDetailsControllerTest</members>
 		<members>UpdateStudentControllerTest</members>
+		<members>testBatch</members>
+		<members>TriggerStudentTest</members>
 		<name>ApexClass</name>
 	</types>
 	<types>

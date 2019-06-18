@@ -4,16 +4,100 @@
 		"selected_items":
 		[
 			[
+				"score",
+				"score"
+			],
+			[
+				"sco",
+				"score"
+			],
+			[
+				"bat",
+				"testBatch"
+			],
+			[
+				"cla",
+				"classMath"
+			],
+			[
+				"S",
+				"Score2__c"
+			],
+			[
+				"is",
+				"IsDeleted"
+			],
+			[
+				"ass",
+				"assertEquals()"
+			],
+			[
+				"st",
+				"static"
+			],
+			[
+				"up",
+				"UpdateStudent"
+			],
+			[
+				"Score",
+				"Score1__c"
+			],
+			[
+				"Upda",
+				"UpdateStudentControllerTest"
+			],
+			[
+				"ex",
+				"Exception"
+			],
+			[
+				"student",
+				"StudentDetailsController"
+			],
+			[
+				"Student",
+				"StudentDetailsController"
+			],
+			[
+				"pa",
+				"pageReference"
+			],
+			[
+				"Page",
+				"PageReference\t[Standard Apex Class]"
+			],
+			[
+				"stu",
+				"StudentDetailsController"
+			],
+			[
+				"studen",
+				"studentId"
+			],
+			[
+				"Studetn",
+				"StudentDetailsController"
+			],
+			[
+				"Stu",
+				"Student__c"
+			],
+			[
+				"a",
+				"assertEquals()"
+			],
+			[
+				"name",
+				"Namef__c"
+			],
+			[
 				"Clas",
 				"className__c"
 			],
 			[
 				"Name",
 				"Namef__c"
-			],
-			[
-				"Student",
-				"Student__c"
 			],
 			[
 				"Soc",
@@ -24,24 +108,12 @@
 				"Score2__c"
 			],
 			[
-				"Score",
-				"Score3__c"
-			],
-			[
 				"in",
 				"PUBLIC newInstance(Integer year, Integer month, Integer day) \tDate"
 			],
 			[
 				"ge",
 				"Gender__c"
-			],
-			[
-				"a",
-				"assert()"
-			],
-			[
-				"is",
-				"isTest"
 			],
 			[
 				"Class",
@@ -52,16 +124,8 @@
 				"objKeySearch"
 			],
 			[
-				"stu",
-				"studentComparison"
-			],
-			[
 				"op",
 				"optionsQuery"
-			],
-			[
-				"ass",
-				"assertEquals()"
 			],
 			[
 				"class",
@@ -74,10 +138,6 @@
 			[
 				"test",
 				"testStudent"
-			],
-			[
-				"student",
-				"studentId"
 			],
 			[
 				"page",
@@ -94,10 +154,6 @@
 			[
 				"Nam",
 				"Namef__c"
-			],
-			[
-				"Stu",
-				"StudentDetails"
 			],
 			[
 				"min",
@@ -148,24 +204,12 @@
 				"newS"
 			],
 			[
-				"score",
-				"score3b"
-			],
-			[
 				"get",
 				"getAverageScore"
 			],
 			[
-				"sco",
-				"score3"
-			],
-			[
 				"exe",
 				"executeNOFAPStudentsUpdate"
-			],
-			[
-				"ex",
-				"executeNOStudentsUpdate"
 			],
 			[
 				"cl",
@@ -198,10 +242,6 @@
 			[
 				"re",
 				"result"
-			],
-			[
-				"name",
-				"namel"
 			],
 			[
 				"r",
@@ -268,10 +308,6 @@
 				"apex:dataTable"
 			],
 			[
-				"pa",
-				"apex:pageBlock"
-			],
-			[
 				"ape",
 				"apex:inputTextarea"
 			],
@@ -288,19 +324,20 @@
 	"buffers":
 	[
 		{
-			"file": "src/classes/Controller_test.cls",
+			"file": "src/classes/TriggerStudentTest.cls",
 			"settings":
 			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
+				"buffer_size": 119,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/classes/Controller.cls",
+			"file": "src/classes/TriggerHandle.cls",
 			"settings":
 			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
+				"buffer_size": 6312,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -346,16 +383,24 @@
 	"expanded_folders":
 	[
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src"
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/triggers"
 	],
 	"file_history":
 	[
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/ImportDataPatch.cls",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/testBatch.cls",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/ImportDataScheduleBatch.cls",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/Controller_test.cls",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/StudentDetailsControllerTest.cls",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/Controller.cls",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/UpdateStudentControllerTest.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/StudentDetailsController.cls",
+		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/UpdateStudentController.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/MainPage.page",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/TriggerHandle.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/triggers/triggerStudent.trigger",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/Controller.cls",
-		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/classes/UpdateStudentController.cls",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/UpdateStudent.page",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/StudentDetails.page",
 		"/C/Users/Dev002/Documents/GIT/StudentManagementSalesforce/StudentManagement/src/pages/AddNewStudent.page",
@@ -388,6 +433,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"userselect",
+			"userinput",
 			"student",
 			"outputlist",
 			"debug",
@@ -417,11 +464,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/classes/Controller_test.cls",
+					"file": "src/classes/TriggerStudentTest.cls",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 119,
 						"regions":
 						{
 						},
@@ -434,8 +481,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -446,19 +492,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/classes/Controller.cls",
+					"file": "src/classes/TriggerHandle.cls",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 6312,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								422,
+								422
 							]
 						],
 						"settings":
@@ -557,7 +603,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 274.0,
+	"side_bar_width": 356.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -8,10 +8,12 @@ private class Controller_test
         testClass.add(new Class__c(className__c = 'Math'));
         testClass.add(new Class__c(className__c = 'Physics'));
         testClass.add(new Class__c(className__c = 'Chemistry'));
+
         insert testClass;
+
         Class__c classMath = [SELECT id FROM Class__c Where className__c = 'Chemistry'];
+        
         List<Student__c> testStudent= new List<Student__c>();
-        System.debug(testClass.get(1).id);
         testStudent.add(new Student__c(Name = 'truong vy 1'
         							, Namef__c = 'vy 1' 
 						        	, Namel__c = 'truong' 
