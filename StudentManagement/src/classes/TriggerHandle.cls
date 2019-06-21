@@ -94,6 +94,7 @@ public with sharing class TriggerHandle
 									, NumberOfFailedStudents__c
 									, NumberOfPassedStudents__c
 									FROM Class__c];
+		List<Class__c> classListUpdate = new List<Class__c>();
 		for(Class__c c : classList)
 		{
 			if(differentStudenMap.containsKey(c.id)){
@@ -103,17 +104,18 @@ public with sharing class TriggerHandle
 				{
 					c.NumberOfPassedStudents__c += 1;
 					c.NumberOfFailedStudents__c -= 1;
-					update c;
+					classListUpdate.add( c);
 				}
 				//student changed from passed to failed
 				else
 				{
 					c.NumberOfPassedStudents__c -= 1;
 					c.NumberOfFailedStudents__c += 1;
-					update c;
+					classListUpdate.add( c);
 				}
 			}
 		}
+		update classListUpdate;
 	}
 	// update number of students failed and passed in object class__c
 	private void executeNOFAPStudentsUpdate(list<Student__c> studentList, String action)
@@ -151,6 +153,7 @@ public with sharing class TriggerHandle
 		}
 		List<Class__c> classList = [SELECT id, NumberOfFailedStudents__c, NumberOfPassedStudents__c From Class__c];
 		//execute update number of passed and failed students
+		List<Class__c> classListUpdate = new List<Class__c>();
 		for(Class__c c : classList) 
 		{
 			// execute update number failed students
@@ -166,7 +169,7 @@ public with sharing class TriggerHandle
 				{
 					c.NumberOfFailedStudents__c -= classIDMapWithFaliedStudents.get(c.id);
 				}
-				update c ;
+				classListUpdate.add(c);
 				classIDMapWithFaliedStudents.remove(c.id);
 			}
 			// execute update number of passed students
@@ -182,15 +185,17 @@ public with sharing class TriggerHandle
 				{
 					c.NumberOfPassedStudents__c -= classIDMapWithPassedStudents.get(c.id) ;
 				}
-				update c ; 
+				classListUpdate.add(c); 
 				classIDMapWithPassedStudents.remove(c.id);
 			}
 		}
+		update classListUpdate;
 
 	}
 	// update number of students in object class__c
 	private void executeNOStudentsUpdate(List<Student__c> studentList, String action)
 	{
+
 		Map<ID, Integer> classIDMap = new Map<ID, Integer>();
 		// select all classes in the student list
 		// put class id with value into map , value is number of appearences of classes id in student list 
@@ -208,6 +213,7 @@ public with sharing class TriggerHandle
 		List<Class__c> classList = [SELECT id, NumberOfStudents__c From Class__c];
 		System.debug(classList.get(0).NumberOfStudents__c);
 		// execute updating number of students in classes
+		List<Class__c> classListUpdate = new List<Class__c>();
 		for(Class__c c : classList)
 		{
 			if(classIDMap.containsKey(c.id))
@@ -224,11 +230,12 @@ public with sharing class TriggerHandle
 					c.NumberOfStudents__c = c.NumberOfStudents__c - classIDMap.get(c.id);
 				}
 				
-				update c ;
+				classListUpdate.add(c);
 				// revome key with the specified class updated
 				classIDMap.remove(c.id);
 			}
-		}  
+		}
+		update classListUpdate;  
 	}
 	public class CustomException extends Exception {}
 }

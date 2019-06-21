@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"stude",
+				"studentList"
+			],
+			[
+				"student",
+				"student"
+			],
+			[
+				"Student",
+				"Student__c"
+			],
+			[
+				"classli",
+				"classListUpdate"
+			],
+			[
 				"score",
 				"score"
 			],
@@ -50,14 +66,6 @@
 			[
 				"ex",
 				"Exception"
-			],
-			[
-				"student",
-				"StudentDetailsController"
-			],
-			[
-				"Student",
-				"StudentDetailsController"
 			],
 			[
 				"pa",
@@ -327,7 +335,7 @@
 			"file": "src/classes/TriggerStudentTest.cls",
 			"settings":
 			{
-				"buffer_size": 119,
+				"buffer_size": 4092,
 				"line_ending": "Unix"
 			}
 		},
@@ -335,8 +343,25 @@
 			"file": "src/classes/TriggerHandle.cls",
 			"settings":
 			{
-				"buffer_size": 6312,
+				"buffer_size": 6734,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/StudentDetailsController.cls",
+			"settings":
+			{
+				"buffer_size": 2467,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/StudentDetailsController.cls-meta.xml",
+			"settings":
+			{
+				"buffer_size": 174,
 				"line_ending": "Unix"
 			}
 		}
@@ -468,7 +493,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 119,
+						"buffer_size": 4092,
 						"regions":
 						{
 						},
@@ -484,10 +509,10 @@
 							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1441.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -496,15 +521,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6312,
+						"buffer_size": 6734,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								422,
-								422
+								1655,
+								1670
 							]
 						],
 						"settings":
@@ -513,10 +538,67 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 811.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/classes/StudentDetailsController.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2467,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1502,
+								1502
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 435.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/classes/StudentDetailsController.cls-meta.xml",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 174,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

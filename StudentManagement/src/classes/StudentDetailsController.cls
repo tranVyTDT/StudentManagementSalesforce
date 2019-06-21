@@ -16,7 +16,7 @@ public with sharing class StudentDetailsController {
 	}
 
 	private void getStudentDetails(String studentId){
-		Student__c student = 	[SELECT 
+		List<Student__c> studentList = 	[SELECT 
 		    			AverageScore__c
 		    			,Birthday__c
 		    			,Namef__c
@@ -27,7 +27,13 @@ public with sharing class StudentDetailsController {
 		    			,State__c
 		    			,Gender__c
 		    			FROM Student__c
-		    			WHERE id =: studentId];
+		    			WHERE id =: studentId LIMIT 1];
+		Student__c student = new Student__c();
+		if(studentList.size() > 0){
+			student = studentList.get(0);
+		} else {
+			throw new CustomException('student did not find');
+		}
 
 		this.lastNameDetails = student.Namel__c;
 		this.firstNameDetails = student.Namef__c;
@@ -69,5 +75,5 @@ public with sharing class StudentDetailsController {
 		}
 		ApexPages.addMessage(new ApexPages.message(ApexPages.severity.CONFIRM, 'delete success'));
 	}
-	
+	public class CustomException extends Exception {}
 }
